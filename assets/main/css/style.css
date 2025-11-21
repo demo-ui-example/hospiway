@@ -3,6 +3,22 @@
   --color-secondary: #d9a640;
 }
 
+.b2-font-r {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.b2-font-m {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.color-white {
+  color: #ffffff;
+}
+
 *,
 *:before,
 *:after {
@@ -126,4 +142,88 @@ body {
   line-height: 24px;
   font-weight: 600;
   color: var(--color-primary);
+}
+
+.footer-container {
+  padding: 30px 40px 45px;
+  background-color: var(--color-primary);
+}
+.footer-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr 4fr 2fr;
+  gap: 24px;
+}
+.footer-title {
+  margin-bottom: 24px;
+}
+.footer-contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-contact ul li .address,
+.footer-contact ul li .phone,
+.footer-contact ul li .mail {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.footer-contact ul li .address .icon,
+.footer-contact ul li .phone .icon,
+.footer-contact ul li .mail .icon {
+  width: 16px;
+  height: 16px;
+  transform: translateY(4px);
+}
+.footer-contact ul li .address .icon svg,
+.footer-contact ul li .phone .icon svg,
+.footer-contact ul li .mail .icon svg {
+  width: 16px;
+  height: 16px;
+  max-width: unset;
+}
+.footer-contact ul li .phone a,
+.footer-contact ul li .mail a {
+  transition: color 0.3s ease-in-out;
+}
+.footer-contact ul li .phone a:hover,
+.footer-contact ul li .mail a:hover {
+  color: var(--color-secondary);
+}
+.footer-menu ul.menu {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 8px 64px;
+}
+.footer-menu ul.menu li a {
+  transition: color 0.3s ease-in-out;
+}
+.footer-menu ul.menu li a:hover {
+  color: var(--color-secondary);
+}
+.footer-follow ul.follow-us {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-follow ul.follow-us li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-follow ul.follow-us li a .text {
+  transition: color 0.3s ease-in-out;
+}
+.footer-follow ul.follow-us li a .text:hover {
+  color: var(--color-secondary);
+}
+.footer-bottom {
+  background-color: #070730;
+  padding: 10px 40px;
+}
+.footer-copyright, .footer-create {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
 }

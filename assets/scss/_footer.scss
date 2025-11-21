@@ -1,0 +1,95 @@
+.footer {
+  &-container {
+    padding: 30px 40px 45px;
+    background-color: var(--color-primary);
+  }
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 3fr 4fr 2fr;
+    gap: 24px;
+  }
+  &-title {
+    margin-bottom: 24px;
+  }
+  &-contact {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      li {
+        .address,
+        .phone,
+        .mail {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          .icon {
+            width: 16px;
+            height: 16px;
+            transform: translateY(4px);
+            svg {
+              width: 16px;
+              height: 16px;
+              max-width: unset;
+            }
+          }
+        }
+        .phone,
+        .mail {
+          a {
+            transition: color 0.3s ease-in-out;
+            &:hover {
+              color: var(--color-secondary);
+            }
+          }
+        }
+      }
+    }
+  }
+  &-menu {
+    ul.menu {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      gap: 8px 64px;
+      li {
+        a {
+          transition: color 0.3s ease-in-out;
+          &:hover {
+            color: var(--color-secondary);
+          }
+        }
+      }
+    }
+  }
+  &-follow {
+    ul.follow-us {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          .text {
+            transition: color 0.3s ease-in-out;
+            &:hover {
+              color: var(--color-secondary);
+            }
+          }
+        }
+      }
+    }
+  }
+  &-bottom {
+    background-color: #070730;
+    padding: 10px 40px;
+  }
+  &-copyright,
+  &-create {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
