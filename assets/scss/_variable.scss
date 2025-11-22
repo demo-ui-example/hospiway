@@ -1,6 +1,7 @@
 :root {
   --color-primary: #112448;
   --color-secondary: #d9a640;
+  --color-third: #50984f;
 }
 .b2-font-r {
   font-size: 15px;
@@ -14,4 +15,17 @@
 }
 .color-white {
   color: #ffffff;
+}
+.h2-font {
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: 700;
+}
+.b1-font-r {
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 400;
+}
+.color-primary {
+  color: var(--color-primary);
 }

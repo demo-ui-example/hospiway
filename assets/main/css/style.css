@@ -1,6 +1,7 @@
 :root {
   --color-primary: #112448;
   --color-secondary: #d9a640;
+  --color-third: #50984f;
 }
 
 .b2-font-r {
@@ -17,6 +18,22 @@
 
 .color-white {
   color: #ffffff;
+}
+
+.h2-font {
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+.b1-font-r {
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 400;
+}
+
+.color-primary {
+  color: var(--color-primary);
 }
 
 *,
@@ -90,6 +107,20 @@ body {
   -webkit-font-smoothing: auto !important;
   -moz-osx-font-smoothing: grayscale !important;
   font-family: "Montserrat", sans-serif;
+}
+
+.global-btn {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  color: #fff;
+  padding: 12px;
+  background-color: var(--color-secondary);
+  transition: all 0.3s ease;
+}
+.global-btn:hover {
+  color: #fff;
+  background-color: var(--color-third);
 }
 
 #header {
@@ -226,4 +257,88 @@ body {
   line-height: 16px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.banner-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(17, 36, 72, 0) 55%, rgba(17, 36, 72, 0.8) 90%);
+}
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner-content {
+  position: absolute;
+  z-index: 2;
+  left: 40px;
+  bottom: 40px;
+  max-width: 41.6666666667%;
+}
+.banner-content .title {
+  margin-bottom: 12px;
+}
+.banner-content .description {
+  margin-bottom: 40px;
+}
+
+.profile {
+  padding: 40px 40px 80px;
+}
+.profile-image {
+  width: 100%;
+  aspect-ratio: 555/620;
+}
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-content {
+  padding-left: calc(8.3333333333% + 48px);
+  padding-right: calc(8.3333333333% + 48px);
+  background-color: #f6f6f6;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile-content .ic-student {
+  position: absolute;
+  right: 8px;
+  top: 0;
+}
+.profile-content .name {
+  margin-bottom: 8px;
+}
+.profile-content .position {
+  margin-bottom: 24px;
+}
+.profile-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.profile-detail-item ul {
+  list-style-type: disc;
+  padding-left: 22px;
+}
+.profile-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
 }
