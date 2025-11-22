@@ -693,3 +693,37 @@ body {
   left: 8px;
   z-index: 3;
 }
+
+.info {
+  background: linear-gradient(180deg, #3b527c -7.67%, #132349 100%);
+  padding: 80px 0;
+}
+.info .info-why-title {
+  margin-bottom: 96px;
+}
+.info .info-why-item .big-title {
+  font-size: 64px;
+  line-height: 80px;
+  font-weight: 700;
+  background: linear-gradient(81.77deg, #ffffff 1.5%, #d9a640 30.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 48px;
+  text-align: center;
+}
+.info .info-why-item .description {
+  text-align: center;
+}
+.info .info-why-item .description .text {
+  margin-bottom: 8px;
+}
+.info .info-why-item .description .content {
+  padding: 0 20px;
+}
+.info .info-why-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
