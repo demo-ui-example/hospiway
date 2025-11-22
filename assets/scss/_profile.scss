@@ -11,6 +11,7 @@
     z-index: 3;
     background-image: url("../../images/icon/artwork.svg");
     background-size: 100% 100%;
+    pointer-events: none;
   }
   &-image {
     width: 100%;
