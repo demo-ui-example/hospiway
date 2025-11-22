@@ -1,4 +1,15 @@
 .banner {
+  &.not-home {
+    .banner-content {
+      display: none;
+    }
+    .banner-wrapper {
+      height: 620px;
+      &::before {
+        content: unset;
+      }
+    }
+  }
   &-wrapper {
     position: relative;
     width: 100%;
