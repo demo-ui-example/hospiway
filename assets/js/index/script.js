@@ -32,10 +32,41 @@ function swiperTraining() {
     },
   });
 }
+function swiperTeam() {
+  if (
+    !document.querySelector(".team-image") ||
+    !document.querySelector(".swiper-content-team")
+  )
+    return;
+  var swiperTeamImage = new Swiper(".team-image", {
+    effect: "fade",
+    slidesPerView: 1,
+    speed: 900,
+    allowTouchMove: false,
+  });
+  var swiperTeamContent = new Swiper(".swiper-content-team", {
+    slidesPerView: 1,
+    speed: 900,
+    allowTouchMove: false,
+    controller: {
+      control: swiperTeamImage,
+    },
+    navigation: {
+      nextEl: ".team-left .swiper-button-next",
+      prevEl: ".team-left .swiper-button-prev",
+    },
+    pagination: {
+      el: ".team-left .swiper-pagination",
+      type: "fraction",
+    },
+  });
+  swiperTeamImage.controller.control = swiperTeamContent;
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
   swiperTraining();
+  swiperTeam();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body

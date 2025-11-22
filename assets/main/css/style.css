@@ -452,7 +452,7 @@ body {
   width: 40px;
   height: 40px;
   background-color: #fff;
-  margin-top: 0;
+  margin-top: -15px;
   transition: all 0.3s ease;
 }
 .course .course-list .custom-btn:hover {
@@ -587,4 +587,109 @@ body {
 }
 .training .custom-btn svg path {
   transition: all 0.3s ease;
+}
+
+.team {
+  padding: 24px 40px 48px;
+}
+.team-title {
+  margin-bottom: 24px;
+}
+.team-right {
+  width: 100%;
+  aspect-ratio: 555/620;
+  overflow: hidden;
+}
+.team-left {
+  background-color: #f6f6f6;
+  height: 100%;
+  margin-right: calc(8.3333333333% + 48px);
+  margin-left: calc(8.3333333333% + 48px);
+  padding-top: 48px;
+  position: relative;
+}
+.team .team-image .img {
+  width: 100%;
+  aspect-ratio: 555/620;
+}
+.team .team-image .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.team .custom-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  margin: 0;
+  top: auto;
+  bottom: 40px;
+  transition: all 0.3s ease;
+}
+.team .custom-btn:hover {
+  background-color: var(--color-primary);
+}
+.team .custom-btn:hover svg path {
+  stroke: #fff;
+}
+.team .custom-btn::after {
+  content: "";
+  font-size: 0;
+}
+.team .custom-btn svg {
+  width: 13px;
+  height: 9px;
+}
+.team .custom-btn svg path {
+  transition: all 0.3s ease;
+}
+.team .swiper-button-prev {
+  left: 0;
+}
+.team .swiper-button-next {
+  right: auto;
+  left: 50px;
+}
+.team .swiper-pagination {
+  position: absolute;
+  right: 0;
+  bottom: 48px;
+  width: max-content;
+  left: auto;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.team-box .name {
+  margin-bottom: 8px;
+}
+.team-box-desc {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.team-box-item-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.team-box-item ul {
+  list-style-type: disc;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.team-col {
+  background-color: #f6f6f6;
+  position: relative;
+  height: 100%;
+}
+.team-col .ic-student {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  z-index: 3;
 }
