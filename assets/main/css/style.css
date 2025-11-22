@@ -401,6 +401,8 @@ body {
 .introduction .col-left ul {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100%;
   gap: 20px;
 }
 .introduction .col-left ul li:nth-child(2) {

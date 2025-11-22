@@ -28,6 +28,8 @@
     ul {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      height: 100%;
       gap: 20px;
       li {
         &:nth-child(2) {
