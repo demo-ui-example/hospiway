@@ -8,6 +8,11 @@
   line-height: 24px;
   font-weight: 400;
 }
+.btn-font {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
 .b2-font-m {
   font-size: 14px;
   line-height: 24px;
@@ -28,4 +33,12 @@
 }
 .color-primary {
   color: var(--color-primary);
+}
+.color-secondary {
+  color: var(--color-secondary);
+}
+.b1-font-b {
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 700;
 }

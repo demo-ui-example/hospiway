@@ -10,8 +10,32 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 // end lenis
+function swiperCourse() {
+  if (!document.querySelector(".course-swiper")) return;
+  var swiper = new Swiper(".course-swiper", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".course-list .swiper-button-next",
+      prevEl: ".course-list .swiper-button-prev",
+    },
+  });
+}
+function swiperTraining() {
+  if (!document.querySelector(".training-swiper")) return;
+  var swiper = new Swiper(".training-swiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".training-list .swiper-button-next",
+      prevEl: ".training-list .swiper-button-prev",
+    },
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
+  swiperCourse();
+  swiperTraining();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body

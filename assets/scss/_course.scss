@@ -1,0 +1,91 @@
+.course {
+  padding: 48px 30px;
+  background-color: #f8f8f8;
+  &-title {
+    margin-bottom: 48px;
+  }
+  .course-list {
+    position: relative;
+    .custom-btn {
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      margin-top: 0;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: var(--color-primary);
+        svg {
+          path {
+            stroke: #fff;
+          }
+        }
+      }
+      &::after {
+        content: "";
+        font-size: 0;
+      }
+      svg {
+        width: 13px;
+        height: 9px;
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+  &-item {
+    position: relative;
+    box-shadow: 0px 0px 10px 5px #0000001a;
+    &:hover {
+      .course-image {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  .swiper {
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  &-content {
+    padding: 24px 24px 16px;
+    .course-teacher {
+      padding: 16px 0;
+      border-top: 1px solid rgba(17, 36, 72, 0.1);
+      border-bottom: 1px solid rgba(17, 36, 72, 0.1);
+      margin: 16px 0;
+      gap: 8px;
+    }
+    .course-top {
+      .name {
+        margin-bottom: 8px;
+      }
+    }
+    .course-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .btn-register {
+        gap: 8px;
+      }
+    }
+  }
+  &-image {
+    overflow: hidden;
+    aspect-ratio: 440 / 294;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  .swiper-button-prev {
+    left: -20px;
+  }
+  .swiper-button-next {
+    right: -20px;
+  }
+}
