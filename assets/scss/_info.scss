@@ -1,6 +1,19 @@
 .info {
   background: linear-gradient(180deg, #3b527c -7.67%, #132349 100%);
   padding: 80px 0;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url("../../images/icon/union.png");
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 330px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+  }
   .info-why-title {
     margin-bottom: 96px;
   }
@@ -9,13 +22,27 @@
       font-size: 64px;
       line-height: 80px;
       font-weight: 700;
-      background: linear-gradient(81.77deg, #ffffff 1.5%, #d9a640 30.06%);
+      background: linear-gradient(81.77deg, #ffffff 1.5%, #d9a640 90.06%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       color: transparent;
       margin-bottom: 48px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 10px;
+        background: transparent;
+        box-shadow: 0 0 40px 20px #00000066;
+        border-radius: 50%;
+      }
     }
     .description {
       text-align: center;
@@ -31,5 +58,26 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
+    margin-bottom: 100px;
+  }
+  .marquee-container {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  .marquee-content {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 80px;
+  }
+  .marquee-item {
+    width: 136px;
+    min-width: 136px;
+    height: 136px;
+  }
+  .partner-title {
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 2;
   }
 }
