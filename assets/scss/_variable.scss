@@ -2,6 +2,9 @@
   --color-primary: #112448;
   --color-secondary: #d9a640;
   --color-third: #50984f;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 .b2-font-r {
   font-size: 15px;
@@ -36,6 +39,9 @@
 }
 .color-secondary {
   color: var(--color-secondary);
+}
+.color-third {
+  color: var(--color-third);
 }
 .b1-font-b {
   font-size: 17px;
