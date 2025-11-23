@@ -1,9 +1,82 @@
 .feeback-sec {
   padding: 80px 0;
+  background-color: #f8f8f8;
   .feedback-wrap {
     display: grid;
     grid-template-columns: 4fr 6fr;
     gap: 24px;
     margin-bottom: 80px;
+  }
+  .swiper {
+    padding: 10px;
+    overflow: hidden;
+  }
+  .feedback-teach {
+    position: relative;
+    margin-left: -10px;
+    margin-right: -10px;
+    .swiper-button-next {
+      right: -54px;
+    }
+    .swiper-button-prev {
+      left: -54px;
+    }
+  }
+  .feedback-video {
+    margin-top: 40px;
+    position: relative;
+    margin-left: -10px;
+    margin-right: -10px;
+    .swiper-button-next {
+      right: -54px;
+    }
+    .swiper-button-prev {
+      left: -54px;
+    }
+  }
+  .custom-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    margin-top: -20px;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--color-primary);
+      svg {
+        path {
+          stroke: #fff;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      font-size: 0;
+    }
+    svg {
+      width: 13px;
+      height: 9px;
+      path {
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  .teach-item {
+    box-shadow: 0px 0px 10px 5px #0000001a;
+    padding: 40px 40px 24px;
+    border-bottom: 2px solid var(--color-primary);
+    .info-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(17, 36, 72, 0.1);
+      margin-top: 40px;
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
   }
 }
