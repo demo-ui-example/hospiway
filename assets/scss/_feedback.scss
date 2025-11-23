@@ -1,0 +1,9 @@
+.feeback-sec {
+  padding: 80px 0;
+  .feedback-wrap {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+}

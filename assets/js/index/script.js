@@ -195,6 +195,17 @@ function customDropdown() {
     });
   }
 }
+function swiperPageFeedback() {
+  if (!document.querySelector(".swiper-teach")) return;
+  var swiper = new Swiper(".swiper-teach", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".feedback-teach .swiper-button-next",
+      prevEl: ".feedback-teach .swiper-button-prev",
+    },
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -202,6 +213,7 @@ const init = () => {
   swiperTeam();
   marquee();
   customDropdown();
+  swiperPageFeedback();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body

@@ -1176,3 +1176,13 @@ body {
 .instruct-item {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
 }
+
+.feeback-sec {
+  padding: 80px 0;
+}
+.feeback-sec .feedback-wrap {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: 24px;
+  margin-bottom: 80px;
+}
