@@ -1,6 +1,13 @@
 .course {
   padding: 48px 30px 38px;
   background-color: #f8f8f8;
+  &.no-swiper {
+    .course-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px 20px;
+    }
+  }
   &-title {
     margin-bottom: 38px;
   }

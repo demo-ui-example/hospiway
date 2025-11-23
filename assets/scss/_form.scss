@@ -2,6 +2,12 @@
   padding-bottom: 115px;
   padding-top: 48px;
   position: relative;
+  &.no-artwork {
+    padding-bottom: 48px;
+    &::before {
+      content: unset;
+    }
+  }
   &.no-form {
     padding: 90px 0;
     .title {

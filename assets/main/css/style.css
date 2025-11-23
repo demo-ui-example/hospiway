@@ -452,6 +452,11 @@ body {
   padding: 48px 30px 38px;
   background-color: #f8f8f8;
 }
+.course.no-swiper .course-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px 20px;
+}
 .course-title {
   margin-bottom: 38px;
 }
@@ -818,6 +823,12 @@ body {
   padding-top: 48px;
   position: relative;
 }
+.form-register.no-artwork {
+  padding-bottom: 48px;
+}
+.form-register.no-artwork::before {
+  content: unset;
+}
 .form-register.no-form {
   padding: 90px 0;
 }
@@ -1102,4 +1113,62 @@ body {
 }
 .our-services-item .content .description {
   text-align: center;
+}
+
+.instruct {
+  padding-bottom: 86px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+.instruct::before {
+  content: "";
+  bottom: 0px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 295px;
+  z-index: 2;
+  background-image: url("../../images/icon/artwork.svg");
+  background-size: 100% 100%;
+  transform: scaleX(-1);
+  pointer-events: none;
+}
+.instruct-title {
+  margin-bottom: 48px;
+}
+.instruct-video {
+  position: relative;
+}
+.instruct-video .ic-control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.instruct-video .ic-control svg {
+  width: 6px;
+  height: 7px;
+}
+.instruct-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  position: relative;
+  z-index: 3;
+}
+.instruct-name {
+  background-color: #fff;
+  padding: 24px;
+}
+.instruct-item {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
 }
