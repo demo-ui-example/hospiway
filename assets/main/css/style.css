@@ -818,6 +818,20 @@ body {
   padding-top: 48px;
   position: relative;
 }
+.form-register.no-form {
+  padding: 90px 0;
+}
+.form-register.no-form .title {
+  margin-bottom: 24px;
+}
+.form-register.no-form button {
+  max-width: 440px;
+  width: 100%;
+}
+.form-register.no-form .btn-register {
+  position: relative;
+  z-index: 2;
+}
 .form-register::before {
   content: "";
   bottom: 0px;
@@ -971,6 +985,9 @@ body {
   pointer-events: none;
 }
 
+.value {
+  margin-bottom: 48px;
+}
 .value-wrapper {
   display: flex;
 }
@@ -1057,4 +1074,32 @@ body {
   font-size: 15px;
   line-height: 24px;
   color: var(--color-primary);
+}
+
+.our-services {
+  background: linear-gradient(180deg, #3b527c -7.67%, #132349 100%);
+  padding: 80px 0 100px;
+}
+.our-services-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+.our-services-title {
+  margin-bottom: 80px;
+}
+.our-services-item .icon {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.our-services-item .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.our-services-item .content .description {
+  text-align: center;
 }

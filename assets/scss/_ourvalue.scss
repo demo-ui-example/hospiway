@@ -1,0 +1,29 @@
+.our-services {
+  background: linear-gradient(180deg, #3b527c -7.67%, #132349 100%);
+  padding: 80px 0 100px;
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  &-title {
+    margin-bottom: 80px;
+  }
+  &-item {
+    .icon {
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      .description {
+        text-align: center;
+      }
+    }
+  }
+}

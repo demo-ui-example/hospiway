@@ -2,6 +2,20 @@
   padding-bottom: 115px;
   padding-top: 48px;
   position: relative;
+  &.no-form {
+    padding: 90px 0;
+    .title {
+      margin-bottom: 24px;
+    }
+    button {
+      max-width: 440px;
+      width: 100%;
+    }
+    .btn-register {
+      position: relative;
+      z-index: 2;
+    }
+  }
   &::before {
     content: "";
     bottom: 0px;
