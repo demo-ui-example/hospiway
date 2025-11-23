@@ -182,3 +182,47 @@
     }
   }
 }
+.contact-wrap-right {
+  padding-left: calc(calc(1 / 12) * 100% + 40px);
+  padding-right: calc(calc(1 / 12) * 100% + 40px);
+  padding-top: 107px;
+  position: relative;
+  z-index: 3;
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &-item {
+      .title {
+        margin-bottom: 12px;
+      }
+      a {
+        transition: color 0.3s ease;
+        &:hover {
+          color: var(--color-secondary);
+        }
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        li {
+          a {
+            &:hover {
+              svg {
+                path {
+                  fill: var(--color-secondary);
+                }
+              }
+            }
+            svg {
+              path {
+                transition: all 0.3s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

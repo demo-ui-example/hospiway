@@ -1006,6 +1006,39 @@ body {
   pointer-events: none;
 }
 
+.contact-wrap-right {
+  padding-left: calc(8.3333333333% + 40px);
+  padding-right: calc(8.3333333333% + 40px);
+  padding-top: 107px;
+  position: relative;
+  z-index: 3;
+}
+.contact-wrap-right .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-wrap-right .contact-info-item .title {
+  margin-bottom: 12px;
+}
+.contact-wrap-right .contact-info-item a {
+  transition: color 0.3s ease;
+}
+.contact-wrap-right .contact-info-item a:hover {
+  color: var(--color-secondary);
+}
+.contact-wrap-right .contact-info-item ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.contact-wrap-right .contact-info-item ul li a:hover svg path {
+  fill: var(--color-secondary);
+}
+.contact-wrap-right .contact-info-item ul li a svg path {
+  transition: all 0.3s ease;
+}
+
 .value {
   margin-bottom: 48px;
 }
