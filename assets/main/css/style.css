@@ -1179,10 +1179,81 @@ body {
 
 .feeback-sec {
   padding: 80px 0;
+  background-color: #f8f8f8;
 }
 .feeback-sec .feedback-wrap {
   display: grid;
   grid-template-columns: 4fr 6fr;
   gap: 24px;
   margin-bottom: 80px;
+}
+.feeback-sec .swiper {
+  padding: 10px;
+  overflow: hidden;
+}
+.feeback-sec .feedback-teach {
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.feeback-sec .feedback-teach .swiper-button-next {
+  right: -54px;
+}
+.feeback-sec .feedback-teach .swiper-button-prev {
+  left: -54px;
+}
+.feeback-sec .feedback-video {
+  margin-top: 40px;
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.feeback-sec .feedback-video .swiper-button-next {
+  right: -54px;
+}
+.feeback-sec .feedback-video .swiper-button-prev {
+  left: -54px;
+}
+.feeback-sec .custom-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  margin-top: -20px;
+  transition: all 0.3s ease;
+}
+.feeback-sec .custom-btn:hover {
+  background-color: var(--color-primary);
+}
+.feeback-sec .custom-btn:hover svg path {
+  stroke: #fff;
+}
+.feeback-sec .custom-btn::after {
+  content: "";
+  font-size: 0;
+}
+.feeback-sec .custom-btn svg {
+  width: 13px;
+  height: 9px;
+}
+.feeback-sec .custom-btn svg path {
+  transition: all 0.3s ease;
+}
+.feeback-sec .teach-item {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
+  padding: 40px 40px 24px;
+  border-bottom: 2px solid var(--color-primary);
+}
+.feeback-sec .teach-item .info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(17, 36, 72, 0.1);
+  margin-top: 40px;
+}
+.feeback-sec .teach-item .info-wrap .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
 }
