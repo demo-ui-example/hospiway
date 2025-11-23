@@ -1459,3 +1459,132 @@ body {
 .news-detail-wrapper .the-content a:hover {
   color: var(--color-secondary);
 }
+
+.my-course {
+  margin-top: 60px;
+}
+.my-course-wrapper {
+  padding: 80px 40px 40px;
+}
+.my-course-wrapper .col-left {
+  padding-right: 8.3333333333%;
+}
+.my-course-wrapper .col-left .desc {
+  margin-top: 34px;
+  color: rgba(17, 36, 72, 0.5);
+}
+.my-course-wrapper .col-right .nav-tabs {
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 13px;
+  gap: 48px;
+  border-bottom: 1px dashed rgba(17, 36, 72, 0.5);
+}
+.my-course-wrapper .col-right .nav-tabs .nav-link {
+  border-radius: unset;
+  border: none;
+  padding: 0;
+  transition: all 0.4s ease;
+  position: relative;
+}
+.my-course-wrapper .col-right .nav-tabs .nav-link.active, .my-course-wrapper .col-right .nav-tabs .nav-link:hover {
+  color: var(--color-primary);
+}
+.my-course-wrapper .col-right .nav-tabs .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.my-course-wrapper .col-right .nav-tabs .nav-link.active::after, .my-course-wrapper .col-right .nav-tabs .nav-link:hover::after {
+  opacity: 1;
+}
+.my-course-wrapper .col-right .fade {
+  transition: opacity 0.3s linear;
+}
+.my-course-wrapper .col-right .course-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.my-course-wrapper .col-right .course-list .course-item .name {
+  margin-bottom: 0;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-teacher {
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding-top: 0;
+  border-top: unset;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-progress {
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-progress .text {
+  width: 50px;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-progress .progress-bar {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 12px;
+  border-radius: 50px;
+  border: 1px solid var(--color-primary);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: inset 0 0 2px 0 rgba(17, 36, 72, 0.2);
+}
+.my-course-wrapper .col-right .course-list .course-item .course-progress .progress-bar::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  height: calc(100% - 4px);
+  width: calc(var(--progress) - 4px);
+  background: var(--color-secondary);
+  transition: width 0.3s ease;
+  border-radius: 50px 0 0 50px;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-progress .progress-bar .progress-value {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+  line-height: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+  pointer-events: none;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-cta {
+  padding-top: 16% px;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-cta a {
+  background-color: var(--color-white);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  text-transform: uppercase;
+  height: 40px;
+  transition: all 0.3s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-cta a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
