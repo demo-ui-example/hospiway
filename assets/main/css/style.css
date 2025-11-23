@@ -1193,7 +1193,76 @@ body {
   gap: 24px;
   margin-bottom: 80px;
 }
-<<<<<<< HEAD
+.feeback-sec .swiper {
+  padding: 10px;
+  overflow: hidden;
+}
+.feeback-sec .feedback-teach {
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.feeback-sec .feedback-teach .swiper-button-next {
+  right: -54px;
+}
+.feeback-sec .feedback-teach .swiper-button-prev {
+  left: -54px;
+}
+.feeback-sec .feedback-video {
+  margin-top: 40px;
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.feeback-sec .feedback-video .swiper-button-next {
+  right: -54px;
+}
+.feeback-sec .feedback-video .swiper-button-prev {
+  left: -54px;
+}
+.feeback-sec .custom-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  margin-top: -20px;
+  transition: all 0.3s ease;
+}
+.feeback-sec .custom-btn:hover {
+  background-color: var(--color-primary);
+}
+.feeback-sec .custom-btn:hover svg path {
+  stroke: #fff;
+}
+.feeback-sec .custom-btn::after {
+  content: "";
+  font-size: 0;
+}
+.feeback-sec .custom-btn svg {
+  width: 13px;
+  height: 9px;
+}
+.feeback-sec .custom-btn svg path {
+  transition: all 0.3s ease;
+}
+.feeback-sec .teach-item {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
+  padding: 40px 40px 24px;
+  border-bottom: 2px solid var(--color-primary);
+}
+.feeback-sec .teach-item .info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(17, 36, 72, 0.1);
+  margin-top: 40px;
+}
+.feeback-sec .teach-item .info-wrap .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
 
 .section-news {
   padding: 48px 0;
@@ -1201,17 +1270,33 @@ body {
 .section-news .nav-tabs {
   justify-content: center;
   margin-bottom: 48px;
-  padding-bottom: 18px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(17, 36, 72, 0.1);
+  gap: 24px;
 }
 .section-news .nav-tabs .nav-link {
   border-radius: unset;
   border: none;
-  padding: 0 12px;
+  padding: 0;
   transition: all 0.4s ease;
+  position: relative;
 }
 .section-news .nav-tabs .nav-link.active, .section-news .nav-tabs .nav-link:hover {
   color: var(--color-secondary);
+}
+.section-news .nav-tabs .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.section-news .nav-tabs .nav-link.active::after, .section-news .nav-tabs .nav-link:hover::after {
+  opacity: 1;
 }
 .section-news .fade {
   transition: opacity 0.3s linear;
@@ -1313,75 +1398,64 @@ body {
 .pagination .page-number.disabled {
   opacity: 0.4;
   pointer-events: none;
-=======
-.feeback-sec .swiper {
-  padding: 10px;
-  overflow: hidden;
 }
-.feeback-sec .feedback-teach {
-  position: relative;
-  margin-left: -10px;
-  margin-right: -10px;
+
+.news-detail-wrapper {
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
-.feeback-sec .feedback-teach .swiper-button-next {
-  right: -54px;
+.news-detail-wrapper .date {
+  margin-top: 8px;
 }
-.feeback-sec .feedback-teach .swiper-button-prev {
-  left: -54px;
+.news-detail-wrapper .the-content {
+  margin-top: 24px;
 }
-.feeback-sec .feedback-video {
-  margin-top: 40px;
-  position: relative;
-  margin-left: -10px;
-  margin-right: -10px;
+.news-detail-wrapper .the-content p {
+  font-size: 17px;
+  line-height: 27px;
+  margin-bottom: 12px;
 }
-.feeback-sec .feedback-video .swiper-button-next {
-  right: -54px;
+.news-detail-wrapper .the-content .wp-block-image {
+  margin: 24px 0;
+  width: 100%;
 }
-.feeback-sec .feedback-video .swiper-button-prev {
-  left: -54px;
+.news-detail-wrapper .the-content .wp-block-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
-.feeback-sec .custom-btn {
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  margin-top: -20px;
-  transition: all 0.3s ease;
+.news-detail-wrapper .the-content * {
+  font-size: 17px;
+  line-height: 24px;
+  color: var(--color-primary);
 }
-.feeback-sec .custom-btn:hover {
-  background-color: var(--color-primary);
+.news-detail-wrapper .the-content *:last-child {
+  margin-bottom: 0;
 }
-.feeback-sec .custom-btn:hover svg path {
-  stroke: #fff;
+.news-detail-wrapper .the-content h1,
+.news-detail-wrapper .the-content h2,
+.news-detail-wrapper .the-content h3,
+.news-detail-wrapper .the-content h4,
+.news-detail-wrapper .the-content h5,
+.news-detail-wrapper .the-content h6 {
+  margin-top: 24px;
+  margin-bottom: 27px;
+  margin-bottom: 12px;
+  font-weight: bold;
 }
-.feeback-sec .custom-btn::after {
-  content: "";
-  font-size: 0;
+.news-detail-wrapper .the-content ul {
+  list-style: disc;
+  padding-left: 16px;
+  margin-bottom: 12px;
 }
-.feeback-sec .custom-btn svg {
-  width: 13px;
-  height: 9px;
+.news-detail-wrapper .the-content ol {
+  list-style: decimal;
+  padding-left: 16px;
+  margin-bottom: 12px;
 }
-.feeback-sec .custom-btn svg path {
-  transition: all 0.3s ease;
+.news-detail-wrapper .the-content a {
+  transition: all 0.4s ease;
 }
-.feeback-sec .teach-item {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
-  padding: 40px 40px 24px;
-  border-bottom: 2px solid var(--color-primary);
-}
-.feeback-sec .teach-item .info-wrap {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(17, 36, 72, 0.1);
-  margin-top: 40px;
-}
-.feeback-sec .teach-item .info-wrap .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
->>>>>>> master
+.news-detail-wrapper .the-content a:hover {
+  color: var(--color-secondary);
 }

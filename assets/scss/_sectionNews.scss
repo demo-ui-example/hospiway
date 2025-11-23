@@ -4,18 +4,37 @@
   .nav-tabs {
     justify-content: center;
     margin-bottom: 48px;
-    padding-bottom: 18px;
+    padding-bottom: 16px;
     border-bottom: 1px solid rgba(17, 36, 72, 0.1);
+    gap: 24px;
 
     .nav-link {
       border-radius: unset;
       border: none;
-      padding: 0 12px;
+      padding: 0;
       transition: all 0.4s ease;
+      position: relative;
 
       &.active,
       &:hover {
         color: var(--color-secondary);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -16px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--color-secondary);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      &.active::after,
+      &:hover::after {
+        opacity: 1;
       }
     }
   }
