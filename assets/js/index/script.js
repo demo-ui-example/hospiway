@@ -215,6 +215,14 @@ function swiperPageFeedback() {
     },
   });
 }
+function headerMobile() {
+  const headerIcon = document.getElementById("btn-hambuger");
+  const mainMenu = document.querySelector(".header-menu");
+  headerIcon.addEventListener("click", function () {
+    this.classList.toggle("active");
+    mainMenu.classList.toggle("active");
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -223,6 +231,7 @@ const init = () => {
   marquee();
   customDropdown();
   swiperPageFeedback();
+  headerMobile();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
