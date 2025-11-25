@@ -3,7 +3,6 @@
   background-color: #ffffff;
   @media (max-width: 991px) {
     padding: 40px 10px 40px;
-    background-color: #f8f8f8;
   }
   &-title {
     margin-bottom: 38px;
@@ -60,7 +59,7 @@
   .custom-btn {
     width: 40px;
     height: 40px;
-    background-color: #fff;
+    background-color: #f8f8f8;
     margin-top: -20px;
     transition: all 0.3s ease;
     @media (max-width: 991px) {

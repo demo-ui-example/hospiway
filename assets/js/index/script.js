@@ -54,14 +54,24 @@ function swiperTeam() {
     effect: "fade",
     slidesPerView: 1,
     speed: 900,
-    allowTouchMove: false,
+    allowTouchMove: true,
+    breakpoints: {
+      991: {
+        allowTouchMove: false,
+      },
+    },
   });
   var swiperTeamContent = new Swiper(".swiper-content-team", {
     slidesPerView: 1,
     speed: 900,
-    allowTouchMove: false,
+    allowTouchMove: true,
     controller: {
       control: swiperTeamImage,
+    },
+    breakpoints: {
+      991: {
+        allowTouchMove: false,
+      },
     },
     navigation: {
       nextEl: ".team-left .swiper-button-next",
