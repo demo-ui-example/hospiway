@@ -6,6 +6,7 @@
   padding: 12px;
   background-color: var(--color-secondary);
   transition: all 0.3s ease;
+  display: inline-block;
   &:hover {
     color: #fff;
     background-color: var(--color-third);

@@ -1,6 +1,22 @@
 .profile {
   padding: 40px 40px 80px;
   position: relative;
+  @media (max-width: 991px) {
+    padding: 20px 20px 40px;
+  }
+  .ic-student {
+    position: absolute;
+    right: 8px;
+    top: 0;
+    z-index: 2;
+    top: 40px;
+    right: 48px;
+    @media (max-width: 991px) {
+      top: 20px;
+      right: 40px;
+      width: 47px;
+    }
+  }
   &::before {
     content: "";
     bottom: -30px;
@@ -12,6 +28,10 @@
     background-image: url("../../images/icon/artwork.svg");
     background-size: 100% 100%;
     pointer-events: none;
+    @media (max-width: 991px) {
+      background-size: cover;
+      bottom: -180px;
+    }
   }
   &-image {
     width: 100%;
@@ -31,10 +51,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    .ic-student {
-      position: absolute;
-      right: 8px;
-      top: 0;
+    @media (max-width: 991px) {
+      padding: 20px;
     }
     .name {
       margin-bottom: 8px;

@@ -13,22 +13,34 @@ gsap.ticker.lagSmoothing(0);
 function swiperCourse() {
   if (!document.querySelector(".course-swiper")) return;
   var swiper = new Swiper(".course-swiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
       nextEl: ".course-list .swiper-button-next",
       prevEl: ".course-list .swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
     },
   });
 }
 function swiperTraining() {
   if (!document.querySelector(".training-swiper")) return;
   var swiper = new Swiper(".training-swiper", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
       nextEl: ".training-list .swiper-button-next",
       prevEl: ".training-list .swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
     },
   });
 }
@@ -42,14 +54,24 @@ function swiperTeam() {
     effect: "fade",
     slidesPerView: 1,
     speed: 900,
-    allowTouchMove: false,
+    allowTouchMove: true,
+    breakpoints: {
+      991: {
+        allowTouchMove: false,
+      },
+    },
   });
   var swiperTeamContent = new Swiper(".swiper-content-team", {
     slidesPerView: 1,
     speed: 900,
-    allowTouchMove: false,
+    allowTouchMove: true,
     controller: {
       control: swiperTeamImage,
+    },
+    breakpoints: {
+      991: {
+        allowTouchMove: false,
+      },
     },
     navigation: {
       nextEl: ".team-left .swiper-button-next",
@@ -215,6 +237,14 @@ function swiperPageFeedback() {
     },
   });
 }
+function headerMobile() {
+  const headerIcon = document.getElementById("btn-hambuger");
+  const mainMenu = document.querySelector(".header-menu");
+  headerIcon.addEventListener("click", function () {
+    this.classList.toggle("active");
+    mainMenu.classList.toggle("active");
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -223,6 +253,7 @@ const init = () => {
   marquee();
   customDropdown();
   swiperPageFeedback();
+  headerMobile();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
