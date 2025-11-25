@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết - Khóa học của tôi</title>
+    <!-- import favicon -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <!-- meta -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lenis.css" />
+    <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <!-- end meta -->
+    <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+    <!-- end link custom css page -->
+    <!-- scrollRestoration -->
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- layout -->
+    <!-- header -->
+    <script>
+      fetch("./components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+          const currentPath = window.location.pathname || "/";
+
+          const navLinks = document.querySelectorAll(".header-menu ul>li>a");
+          navLinks.forEach((link) => {
+            const linkPath = link.getAttribute("href");
+
+            // Normalize paths for comparison
+            let normalizedCurrentPath = currentPath;
+            let normalizedLinkPath = linkPath;
+
+            // Remove leading "./" from link path
+            if (normalizedLinkPath.startsWith("./")) {
+              normalizedLinkPath = normalizedLinkPath.substring(1);
+            }
+
+            // For GitHub Pages, get the last segment of the path
+            const currentSegment =
+              normalizedCurrentPath.split("/").pop() || "/";
+            const linkSegment = normalizedLinkPath.split("/").pop() || "/";
+
+            // Check if paths match
+            const isMatch =
+              normalizedLinkPath === normalizedCurrentPath || // Exact match
+              currentSegment === linkSegment || // Segment match
+              (currentPath.endsWith(normalizedLinkPath) &&
+                normalizedLinkPath !== "/") || // Ends with
+              (currentPath === "/" && (linkPath === "/" || linkPath === "./")); // Home page
+
+            if (isMatch) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <header id="header"></header>
+    <!-- end header -->
+    <main>
+      <section class="course-detail">
+        <div class="container-fluid p-0">
+          <div class="course-detail__wrapper">
+            <div class="course-detail__video">
+              <div class="video"></div>
+              <div class="announcement">
+                <div class="icon">
+                  <img src="./assets/images/icon/academic-cap.svg" alt="" />
+                </div>
+                Nhận chứng chỉ hoàn thành khoá học
+              </div>
+            </div>
+            <div class="course-detail__content">
+              <div
+                class="content-top d-flex align-items-center justify-content-between"
+              >
+                <h2 class="title h2-font color-primary">
+                  Khoá học quản lý bán hàng
+                </h2>
+                <div class="teacher b2-font-r color-primary">
+                  Giáo viên <span class="color-secondary">Amy Nhâm Vũ</span>
+                </div>
+              </div>
+              <div class="content-tabs">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link b2-font color-primary active"
+                      id="community-tab-1"
+                      data-bs-toggle="tab"
+                      data-bs-target="#community-1"
+                      type="button"
+                      role="tab"
+                      aria-controls="community-1"
+                      aria-selected="true"
+                    >
+                      Tổng quan bài học
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link b2-font color-primary"
+                      id="community-tab-2"
+                      data-bs-toggle="tab"
+                      data-bs-target="#community-2"
+                      type="button"
+                      role="tab"
+                      aria-controls="community-2"
+                      aria-selected="false"
+                    >
+                      Tài liệu
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link b2-font color-primary"
+                      id="community-tab-3"
+                      data-bs-toggle="tab"
+                      data-bs-target="#community-3"
+                      type="button"
+                      role="tab"
+                      aria-controls="community-3"
+                      aria-selected="false"
+                    >
+                      Video
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="community-1"
+                    role="tabpanel"
+                    aria-labelledby="community-tab-1"
+                  >
+                    <h4>Requirements</h4>
+                    <ul>
+                      <li>
+                        This course is for all professional levels. Both
+                        beginners, as well as intermediate students, will be
+                        able to follow using the step-by-step approach.
+                      </li>
+                    </ul>
+                    <h4>Description</h4>
+                    <ul>
+                      <li>
+                        In this course, you'll learn how to set up your own
+                        boilerplate from scratch with all the technologies,
+                        tools, and libraries you need to get up to speed. 
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="community-2"
+                    role="tabpanel"
+                    aria-labelledby="community-tab-2"
+                  >
+                    <div class="list-document">
+                      <div class="item">
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icon/document-icon.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="content b2-font color-primary">
+                          <div class="title">Tài liệu học tập 1</div>
+                          <a href="#" class="download-link"
+                            >Tải xuống</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="community-3"
+                    role="tabpanel"
+                    aria-labelledby="community-tab-3"
+                  >
+                    <ul class="news-list">
+                      <li>
+                        <a href="./community-detail.html" class="news-item">
+                          <div class="item-image">
+                            <img
+                              src="./assets/images/community-item.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="item-content">
+                            <div class="title b1-font-b color-primary">
+                              Huấn luyện đào tạo trực tuyến
+                            </div>
+                            <div class="desc b2-font color-primary">
+                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
+                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="./community-detail.html" class="news-item">
+                          <div class="item-image">
+                            <img
+                              src="./assets/images/community-item.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="item-content">
+                            <div class="title b1-font-b color-primary">
+                              Huấn luyện đào tạo trực tuyến
+                            </div>
+                            <div class="desc b2-font color-primary">
+                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
+                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="./community-detail.html" class="news-item">
+                          <div class="item-image">
+                            <img
+                              src="./assets/images/community-item.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="item-content">
+                            <div class="title b1-font-b color-primary">
+                              Huấn luyện đào tạo trực tuyến
+                            </div>
+                            <div class="desc b2-font color-primary">
+                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
+                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="./community-detail.html" class="news-item">
+                          <div class="item-image">
+                            <img
+                              src="./assets/images/community-item.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="item-content">
+                            <div class="title b1-font-b color-primary">
+                              Huấn luyện đào tạo trực tuyến
+                            </div>
+                            <div class="desc b2-font color-primary">
+                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
+                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="./community-detail.html" class="news-item">
+                          <div class="item-image">
+                            <img
+                              src="./assets/images/community-item.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="item-content">
+                            <div class="title b1-font-b color-primary">
+                              Huấn luyện đào tạo trực tuyến
+                            </div>
+                            <div class="desc b2-font color-primary">
+                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
+                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="./community-detail.html" class="news-item">
+                          <div class="item-image">
+                            <img
+                              src="./assets/images/community-item.png"
+                              alt=""
+                            />
+                          </div>
+                          <div class="item-content">
+                            <div class="title b1-font-b color-primary">
+                              Huấn luyện đào tạo trực tuyến
+                            </div>
+                            <div class="desc b2-font color-primary">
+                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
+                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="pagination">
+                      <a
+                        href="#"
+                        class="prev-page page-number disabled"
+                        aria-label="Previous page"
+                      >
+                        <svg
+                          width="13"
+                          height="9"
+                          viewBox="0 0 13 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.5 4.5H0.5M0.5 4.5L4.5 0.5M0.5 4.5L4.5 8.5"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </a>
+
+                      <a href="#" class="page-number active">1</a>
+                      <a href="#" class="page-number">2</a>
+                      <a href="#" class="page-number">3</a>
+
+                      <a
+                        href="#"
+                        class="next-page page-number"
+                        aria-label="Next page"
+                      >
+                        <svg
+                          width="13"
+                          height="9"
+                          viewBox="0 0 13 9"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.5 4.5H12.5M12.5 4.5L8.5 0.5M12.5 4.5L8.5 8.5"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- layout -->
+    <!-- footer -->
+    <script>
+      fetch("./components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <footer id="footer"></footer>
+    <!-- end footer -->
+    <!-- end layout -->
+
+    <script src="./assets/libs/jquery-3.7.1.js"></script>
+    <script src="./assets/libs/lenis.min.js"></script>
+    <script src="./assets/libs/gsap.min.js"></script>
+    <script src="./assets/libs/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/SplitText.min.js"></script>
+    <script src="./assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <!-- import custom js -->
+    <script type="module" src="./assets/main/js/script.min.js"></script>
+
+    <!-- end import custom js -->
+  </body>
+</html>
+<!-- https://gsap.com/community/forums/topic/30338-circular-carouselslider/ -->
