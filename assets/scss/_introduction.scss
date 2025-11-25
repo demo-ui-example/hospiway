@@ -1,14 +1,23 @@
 .introduction {
   padding: 0 40px 48px;
+  @media (max-width: 991px) {
+    padding: 0 20px 40px;
+  }
   &-title {
     position: relative;
     z-index: 4;
     margin-bottom: 48px;
+    @media (max-width: 991px) {
+      margin-bottom: 24px;
+    }
   }
   &-wrapper {
     display: grid;
     grid-template-columns: 5fr 7fr;
     gap: 24px;
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
   }
   &-item {
     display: flex;
@@ -22,6 +31,11 @@
     padding: 20px;
     .icon {
       min-width: 60px;
+    }
+  }
+  .col-right {
+    @media (max-width: 991px) {
+      grid-row: 1 / 2;
     }
   }
   .col-left {
@@ -38,6 +52,9 @@
         }
         &:last-child {
           margin-left: 60px;
+          @media (max-width: 991px) {
+            margin-left: 0;
+          }
         }
       }
     }

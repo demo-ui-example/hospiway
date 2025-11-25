@@ -1,6 +1,9 @@
 .course {
   padding: 48px 30px 38px;
   background-color: #f8f8f8;
+  @media (max-width: 991px) {
+    padding: 40px 10px 40px;
+  }
   &.no-swiper {
     padding-left: 40px;
     padding-right: 40px;
@@ -12,15 +15,26 @@
   }
   &-title {
     margin-bottom: 38px;
+    @media (max-width: 991px) {
+      margin-bottom: 14px;
+    }
   }
   .course-list {
     position: relative;
+    @media (max-width: 991px) {
+      padding-bottom: 64px;
+    }
     .custom-btn {
       width: 40px;
       height: 40px;
       background-color: #fff;
       margin-top: -15px;
       transition: all 0.3s ease;
+      @media (max-width: 991px) {
+        bottom: 0;
+        top: auto;
+      }
+
       &:hover {
         background-color: var(--color-primary);
         svg {
@@ -39,6 +53,16 @@
         path {
           transition: all 0.3s ease;
         }
+      }
+    }
+    .swiper-button-prev {
+      @media (max-width: 991px) {
+        left: calc(50% - 45px);
+      }
+    }
+    .swiper-button-next {
+      @media (max-width: 991px) {
+        right: calc(50% - 45px);
       }
     }
   }
@@ -60,6 +84,9 @@
 
   &-content {
     padding: 24px 24px 16px;
+    @media (max-width: 991px) {
+      padding: 20px;
+    }
     .course-teacher {
       padding: 16px 0;
       border-top: 1px solid rgba(17, 36, 72, 0.1);

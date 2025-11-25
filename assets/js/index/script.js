@@ -13,22 +13,34 @@ gsap.ticker.lagSmoothing(0);
 function swiperCourse() {
   if (!document.querySelector(".course-swiper")) return;
   var swiper = new Swiper(".course-swiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
       nextEl: ".course-list .swiper-button-next",
       prevEl: ".course-list .swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
     },
   });
 }
 function swiperTraining() {
   if (!document.querySelector(".training-swiper")) return;
   var swiper = new Swiper(".training-swiper", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
       nextEl: ".training-list .swiper-button-next",
       prevEl: ".training-list .swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
     },
   });
 }

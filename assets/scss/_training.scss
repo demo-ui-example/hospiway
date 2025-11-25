@@ -1,6 +1,10 @@
 .training {
   padding: 48px 30px 38px;
   background-color: #ffffff;
+  @media (max-width: 991px) {
+    padding: 40px 10px 40px;
+    background-color: #f8f8f8;
+  }
   &-title {
     margin-bottom: 38px;
   }
@@ -37,12 +41,21 @@
   }
   &-list {
     position: relative;
+    @media (max-width: 991px) {
+      padding-bottom: 64px;
+    }
   }
   .swiper-button-prev {
     left: -20px;
+    @media (max-width: 991px) {
+      left: calc(50% - 45px);
+    }
   }
   .swiper-button-next {
     right: -20px;
+    @media (max-width: 991px) {
+      right: calc(50% - 45px);
+    }
   }
   .custom-btn {
     width: 40px;
@@ -50,6 +63,10 @@
     background-color: #fff;
     margin-top: -20px;
     transition: all 0.3s ease;
+    @media (max-width: 991px) {
+      bottom: 0;
+      top: auto;
+    }
     &:hover {
       background-color: var(--color-primary);
       svg {
