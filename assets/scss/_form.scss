@@ -2,6 +2,12 @@
   padding-bottom: 115px;
   padding-top: 48px;
   position: relative;
+  @media (max-width: 991px) {
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+  }
   &.no-artwork {
     padding-bottom: 48px;
     &::before {
@@ -34,9 +40,16 @@
     background-size: 100% 100%;
     transform: scaleX(-1);
     pointer-events: none;
+    @media (max-width: 991px) {
+      background-size: cover;
+      bottom: -100px;
+    }
   }
   .form-register-top {
     margin-bottom: 48px;
+    @media (max-width: 991px) {
+      margin-bottom: 24px;
+    }
     .title {
       margin-bottom: 8px;
     }
@@ -45,12 +58,19 @@
     background-color: #fff;
     box-shadow: 0px 0px 10px 5px #0000001a;
     padding: 40px;
+    @media (max-width: 991px) {
+      padding: 20px;
+    }
     form {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
       position: relative;
       z-index: 4;
+      @media (max-width: 991px) {
+        display: flex;
+        flex-direction: column;
+      }
       .form-field {
         position: relative;
         input {

@@ -326,6 +326,11 @@ body {
   top: 9px;
 }
 
+#footer {
+  position: relative;
+  z-index: 3;
+}
+
 .footer-container {
   padding: 30px 40px 45px;
   background-color: var(--color-primary);
@@ -1118,6 +1123,11 @@ body {
 .info .info-why-title {
   margin-bottom: 96px;
 }
+@media (max-width: 991px) {
+  .info .info-why-title {
+    margin-bottom: 40px;
+  }
+}
 .info .info-why-item .big-title {
   font-size: 64px;
   line-height: 80px;
@@ -1169,6 +1179,7 @@ body {
   .info .info-why-list {
     grid-template-columns: 1fr;
     gap: 30px;
+    margin-bottom: 40px;
   }
 }
 .info .marquee-container {
@@ -1181,21 +1192,46 @@ body {
   flex-wrap: nowrap;
   gap: 80px;
 }
+@media (max-width: 991px) {
+  .info .marquee-content {
+    gap: 40px;
+  }
+}
 .info .marquee-item {
   width: 136px;
   min-width: 136px;
   height: 136px;
+}
+@media (max-width: 991px) {
+  .info .marquee-item {
+    width: 68px;
+    min-width: 68px;
+    height: 68px;
+  }
 }
 .info .partner-title {
   margin-bottom: 70px;
   position: relative;
   z-index: 2;
 }
+@media (max-width: 991px) {
+  .info .partner-title {
+    margin-bottom: 40px;
+  }
+}
 
 .form-register {
   padding-bottom: 115px;
   padding-top: 48px;
   position: relative;
+}
+@media (max-width: 991px) {
+  .form-register {
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+  }
 }
 .form-register.no-artwork {
   padding-bottom: 48px;
@@ -1230,8 +1266,19 @@ body {
   transform: scaleX(-1);
   pointer-events: none;
 }
+@media (max-width: 991px) {
+  .form-register::before {
+    background-size: cover;
+    bottom: -100px;
+  }
+}
 .form-register .form-register-top {
   margin-bottom: 48px;
+}
+@media (max-width: 991px) {
+  .form-register .form-register-top {
+    margin-bottom: 24px;
+  }
 }
 .form-register .form-register-top .title {
   margin-bottom: 8px;
@@ -1241,12 +1288,23 @@ body {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
   padding: 40px;
 }
+@media (max-width: 991px) {
+  .form-register .form-register-wrapper {
+    padding: 20px;
+  }
+}
 .form-register .form-register-wrapper form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   position: relative;
   z-index: 4;
+}
+@media (max-width: 991px) {
+  .form-register .form-register-wrapper form {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .form-register .form-register-wrapper form .form-field {
   position: relative;
