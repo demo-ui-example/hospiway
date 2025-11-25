@@ -74,287 +74,389 @@
     <main>
       <section class="course-detail">
         <div class="container-fluid p-0">
-          <div class="course-detail__wrapper">
-            <div class="course-detail__video">
-              <div class="video"></div>
-              <div class="announcement">
-                <div class="icon">
-                  <img src="./assets/images/icon/academic-cap.svg" alt="" />
-                </div>
-                Nhận chứng chỉ hoàn thành khoá học
-              </div>
-            </div>
-            <div class="course-detail__content">
-              <div
-                class="content-top d-flex align-items-center justify-content-between"
-              >
-                <h2 class="title h2-font color-primary">
-                  Khoá học quản lý bán hàng
-                </h2>
-                <div class="teacher b2-font-r color-primary">
-                  Giáo viên <span class="color-secondary">Amy Nhâm Vũ</span>
-                </div>
-              </div>
-              <div class="content-tabs">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link b2-font color-primary active"
-                      id="community-tab-1"
-                      data-bs-toggle="tab"
-                      data-bs-target="#community-1"
-                      type="button"
-                      role="tab"
-                      aria-controls="community-1"
-                      aria-selected="true"
-                    >
-                      Tổng quan bài học
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link b2-font color-primary"
-                      id="community-tab-2"
-                      data-bs-toggle="tab"
-                      data-bs-target="#community-2"
-                      type="button"
-                      role="tab"
-                      aria-controls="community-2"
-                      aria-selected="false"
-                    >
-                      Tài liệu
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link b2-font color-primary"
-                      id="community-tab-3"
-                      data-bs-toggle="tab"
-                      data-bs-target="#community-3"
-                      type="button"
-                      role="tab"
-                      aria-controls="community-3"
-                      aria-selected="false"
-                    >
-                      Video
-                    </button>
-                  </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="community-1"
-                    role="tabpanel"
-                    aria-labelledby="community-tab-1"
-                  >
-                    <h4>Requirements</h4>
-                    <ul>
-                      <li>
-                        This course is for all professional levels. Both
-                        beginners, as well as intermediate students, will be
-                        able to follow using the step-by-step approach.
-                      </li>
-                    </ul>
-                    <h4>Description</h4>
-                    <ul>
-                      <li>
-                        In this course, you'll learn how to set up your own
-                        boilerplate from scratch with all the technologies,
-                        tools, and libraries you need to get up to speed. 
-                      </li>
-                    </ul>
+          <div class="course-detail__wrapper row g-0">
+            <div class="col-left col-lg-9">
+              <div class="course-detail__video">
+                <div class="video"></div>
+                <div class="announcement b2-font-m color-white">
+                  <div class="icon">
+                    <img src="./assets/images/icon/academic-cap.svg" alt="" />
                   </div>
-                  <div
-                    class="tab-pane fade"
-                    id="community-2"
-                    role="tabpanel"
-                    aria-labelledby="community-tab-2"
-                  >
-                    <div class="list-document">
-                      <div class="item">
-                        <div class="icon">
-                          <img
-                            src="./assets/images/icon/document-icon.svg"
-                            alt=""
-                          />
+                  Nhận chứng chỉ hoàn thành khoá học
+                </div>
+              </div>
+              <div class="course-detail__content">
+                <div
+                  class="content-top d-flex align-items-center justify-content-between"
+                >
+                  <h2 class="title b1-font-b color-primary">
+                    Khoá học quản lý bán hàng
+                  </h2>
+                  <div class="teacher b2-font-r color-primary">
+                    Giáo viên
+                    <span class="color-secondary b2-font-m">Amy Nhâm Vũ</span>
+                  </div>
+                </div>
+                <div class="content-tabs">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link b2-font color-primary active"
+                        id="community-tab-1"
+                        data-bs-toggle="tab"
+                        data-bs-target="#community-1"
+                        type="button"
+                        role="tab"
+                        aria-controls="community-1"
+                        aria-selected="true"
+                      >
+                        Tổng quan bài học
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link b2-font color-primary"
+                        id="community-tab-2"
+                        data-bs-toggle="tab"
+                        data-bs-target="#community-2"
+                        type="button"
+                        role="tab"
+                        aria-controls="community-2"
+                        aria-selected="false"
+                      >
+                        Tài liệu
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link b2-font color-primary"
+                        id="community-tab-3"
+                        data-bs-toggle="tab"
+                        data-bs-target="#community-3"
+                        type="button"
+                        role="tab"
+                        aria-controls="community-3"
+                        aria-selected="false"
+                      >
+                        Video
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="community-1"
+                      role="tabpanel"
+                      aria-labelledby="community-tab-1"
+                    >
+                      <h4>Requirements</h4>
+                      <ul>
+                        <li>
+                          This course is for all professional levels. Both
+                          beginners, as well as intermediate students, will be
+                          able to follow using the step-by-step approach.
+                        </li>
+                      </ul>
+                      <h4>Description</h4>
+                      <ul>
+                        <li>
+                          In this course, you'll learn how to set up your own
+                          boilerplate from scratch with all the technologies,
+                          tools, and libraries you need to get up to speed. 
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="community-2"
+                      role="tabpanel"
+                      aria-labelledby="community-tab-2"
+                    >
+                      <div class="list-document">
+                        <div class="item item-document">
+                          <div class="icon">
+                            <img
+                              src="./assets/images/icon/document-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="content b2-font color-primary">
+                            <div class="title">Tài liệu 1.docx</div>
+                            <a href="#" class="download-link">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4 16V17C4 17.7956 4.31607 18.5587 4.87868 19.1213C5.44129 19.6839 6.20435 20 7 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7956 20 17V16M16 12L12 16M12 16L8 12M12 16V4"
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </a>
+                          </div>
                         </div>
-                        <div class="content b2-font color-primary">
-                          <div class="title">Tài liệu học tập 1</div>
-                          <a href="#" class="download-link"
-                            >Tải xuống</a
-                          >
+                        <div class="item item-document">
+                          <div class="icon">
+                            <img
+                              src="./assets/images/icon/document-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="content b2-font color-primary">
+                            <div class="title">Tài liệu 2.docx</div>
+                            <a href="#" class="download-link">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4 16V17C4 17.7956 4.31607 18.5587 4.87868 19.1213C5.44129 19.6839 6.20435 20 7 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7956 20 17V16M16 12L12 16M12 16L8 12M12 16V4"
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="community-3"
+                      role="tabpanel"
+                      aria-labelledby="community-tab-3"
+                    >
+                      <div class="list-document">
+                        <div class="item item-document">
+                          <div class="icon">
+                            <img
+                              src="./assets/images/icon/video-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="content b2-font color-primary">
+                            <div class="title">Video.mp4</div>
+                            <a href="#" class="download-link">
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4 16V17C4 17.7956 4.31607 18.5587 4.87868 19.1213C5.44129 19.6839 6.20435 20 7 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7956 20 17V16M16 12L12 16M12 16L8 12M12 16V4"
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="btn-back b2-font-m color-primary">
+                  <div class="icon">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 12H21M7 16L3 12L7 16ZM3 12L7 8L3 12Z"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  Quay lại các khoá học của tôi
+                </div>
+              </div>
+            </div>
+            <div class="col-right col-lg-3 tab-bar">
+              <div class="course-progress" style="--progress: 50%">
+                <div class="text btn-font color-white">Tiến độ</div>
+                <div class="progress-bar">
+                  <span class="progress-value">50%</span>
+                </div>
+              </div>
+              <div class="title text-uppercase b2-font-m color-primary">
+                Nội dung bài học
+              </div>
+              <div class="accordion" id="accordionLesson">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      <div class="name b1-font-b color-primary">
+                        I. Giới thiệu
+                      </div>
+                      <div class="sub-name b2-font-r color-primary">
+                        1/3 15:00 phút
+                      </div>
+                    </button>
+                  </h2>
                   <div
-                    class="tab-pane fade"
-                    id="community-3"
-                    role="tabpanel"
-                    aria-labelledby="community-tab-3"
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionLesson"
                   >
-                    <ul class="news-list">
-                      <li>
-                        <a href="./community-detail.html" class="news-item">
-                          <div class="item-image">
-                            <img
-                              src="./assets/images/community-item.png"
-                              alt=""
-                            />
+                    <div class="accordion-body">
+                      <div class="lesson-list">
+                        <div class="lesson-item done">
+                          <div class="lesson-icon"></div>
+                          <div class="lesson-name b2-font-m color-primary">
+                            Bài 1 | Gây ấn tượng bằng nụ cười
                           </div>
-                          <div class="item-content">
-                            <div class="title b1-font-b color-primary">
-                              Huấn luyện đào tạo trực tuyến
+                          <div
+                            class="lesson-sub btn-font d-flex align-items-center lesson-video"
+                          >
+                            <div class="icon">
+                              <img
+                                src="./assets/images/icon/video-icon.svg"
+                                alt=""
+                              />
                             </div>
-                            <div class="desc b2-font color-primary">
-                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
-                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
-                            </div>
+                            Video - 5 phút • Bài học bắt buộc
                           </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="./community-detail.html" class="news-item">
-                          <div class="item-image">
-                            <img
-                              src="./assets/images/community-item.png"
-                              alt=""
-                            />
+                        </div>
+                        <div class="lesson-item">
+                          <div class="lesson-icon"></div>
+                          <div class="lesson-name b2-font-m color-primary">
+                            Bài 2 | Gây ấn tượng bằng nụ cười
                           </div>
-                          <div class="item-content">
-                            <div class="title b1-font-b color-primary">
-                              Huấn luyện đào tạo trực tuyến
+                          <div
+                            class="lesson-sub btn-font d-flex align-items-center lesson-video"
+                          >
+                            <div class="icon">
+                              <img
+                                src="./assets/images/icon/video-icon.svg"
+                                alt=""
+                              />
                             </div>
-                            <div class="desc b2-font color-primary">
-                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
-                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
-                            </div>
+                            Video - 5 phút • Bài học bắt buộc
                           </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="./community-detail.html" class="news-item">
-                          <div class="item-image">
-                            <img
-                              src="./assets/images/community-item.png"
-                              alt=""
-                            />
+                        </div>
+                        <div class="lesson-item">
+                          <div class="lesson-icon"></div>
+                          <div class="lesson-name b2-font-m color-primary">
+                            Bài 3 | Gây ấn tượng bằng nụ cười
                           </div>
-                          <div class="item-content">
-                            <div class="title b1-font-b color-primary">
-                              Huấn luyện đào tạo trực tuyến
+                          <div
+                            class="lesson-sub btn-font d-flex align-items-center lesson-video"
+                          >
+                            <div class="icon">
+                              <img
+                                src="./assets/images/icon/document-icon.svg"
+                                alt=""
+                              />
                             </div>
-                            <div class="desc b2-font color-primary">
-                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
-                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
-                            </div>
+                            Video - 5 phút • Bài học bắt buộc
                           </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="./community-detail.html" class="news-item">
-                          <div class="item-image">
-                            <img
-                              src="./assets/images/community-item.png"
-                              alt=""
-                            />
-                          </div>
-                          <div class="item-content">
-                            <div class="title b1-font-b color-primary">
-                              Huấn luyện đào tạo trực tuyến
+                          <div class="lesson-cta">
+                            <div class="finish cta-item">
+                              Đánh dấu hoàn thành
                             </div>
-                            <div class="desc b2-font color-primary">
-                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
-                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
-                            </div>
+                            <div class="continue cta-item">Tiếp tục</div>
                           </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="./community-detail.html" class="news-item">
-                          <div class="item-image">
-                            <img
-                              src="./assets/images/community-item.png"
-                              alt=""
-                            />
-                          </div>
-                          <div class="item-content">
-                            <div class="title b1-font-b color-primary">
-                              Huấn luyện đào tạo trực tuyến
-                            </div>
-                            <div class="desc b2-font color-primary">
-                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
-                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="./community-detail.html" class="news-item">
-                          <div class="item-image">
-                            <img
-                              src="./assets/images/community-item.png"
-                              alt=""
-                            />
-                          </div>
-                          <div class="item-content">
-                            <div class="title b1-font-b color-primary">
-                              Huấn luyện đào tạo trực tuyến
-                            </div>
-                            <div class="desc b2-font color-primary">
-                              CEO nhanh chóng nắm vững toàn bộ kiến thức quản lý
-                              và vận hành tài chính hệ thống mẫu biểu ứng dụng
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="pagination">
-                      <a
-                        href="#"
-                        class="prev-page page-number disabled"
-                        aria-label="Previous page"
-                      >
-                        <svg
-                          width="13"
-                          height="9"
-                          viewBox="0 0 13 9"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12.5 4.5H0.5M0.5 4.5L4.5 0.5M0.5 4.5L4.5 8.5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </a>
-
-                      <a href="#" class="page-number active">1</a>
-                      <a href="#" class="page-number">2</a>
-                      <a href="#" class="page-number">3</a>
-
-                      <a
-                        href="#"
-                        class="next-page page-number"
-                        aria-label="Next page"
-                      >
-                        <svg
-                          width="13"
-                          height="9"
-                          viewBox="0 0 13 9"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.5 4.5H12.5M12.5 4.5L8.5 0.5M12.5 4.5L8.5 8.5"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      <div class="name b1-font-b color-primary">
+                        II. Bài học
+                      </div>
+                      <div class="sub-name b2-font-r color-primary">
+                        1/3 15:00 phút
+                      </div>
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionLesson"
+                  >
+                    <div class="accordion-body">
+                      <strong>This is the second item's accordion body.</strong>
+                      It is hidden by default, until the collapse plugin adds
+                      the appropriate classes that we use to style each element.
+                      These classes control the overall appearance, as well as
+                      the showing and hiding via CSS transitions. You can modify
+                      any of this with custom CSS or overriding our default
+                      variables. It's also worth noting that just about any HTML
+                      can go within the <code>.accordion-body</code>, though the
+                      transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      <div class="name b1-font-b color-primary">
+                        III. Tổng kết
+                      </div>
+                      <div class="sub-name b2-font-r color-primary">
+                        1/3 15:00 phút
+                      </div>
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionLesson"
+                  >
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong>
+                      It is hidden by default, until the collapse plugin adds
+                      the appropriate classes that we use to style each element.
+                      These classes control the overall appearance, as well as
+                      the showing and hiding via CSS transitions. You can modify
+                      any of this with custom CSS or overriding our default
+                      variables. It's also worth noting that just about any HTML
+                      can go within the <code>.accordion-body</code>, though the
+                      transition does limit overflow.
                     </div>
                   </div>
                 </div>
