@@ -2,13 +2,13 @@ import { preloadImages } from "../../libs/utils.js";
 ("use strict");
 $ = jQuery;
 // setup lenis
-const lenis = new Lenis();
-lenis.on("scroll", ScrollTrigger.update);
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
+// const lenis = new Lenis();
+// lenis.on("scroll", ScrollTrigger.update);
+// gsap.ticker.add((time) => {
+//   lenis.raf(time * 1000);
+// });
 
-gsap.ticker.lagSmoothing(0);
+// gsap.ticker.lagSmoothing(0);
 // end lenis
 function swiperCourse() {
   if (!document.querySelector(".course-swiper")) return;
