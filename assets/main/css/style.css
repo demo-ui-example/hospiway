@@ -1934,6 +1934,11 @@ body {
 .section-news {
   padding: 48px 0;
 }
+@media (max-width: 991px) {
+  .section-news {
+    padding: 40px 20px;
+  }
+}
 .section-news .nav-tabs {
   justify-content: center;
   margin-bottom: 48px;
@@ -1973,6 +1978,12 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px 20px;
+}
+@media (max-width: 991px) {
+  .news-list {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 .news-list li {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
