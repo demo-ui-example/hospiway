@@ -274,14 +274,11 @@ function headerMobile() {
     mainMenu.classList.toggle("active");
   });
 }
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
-    AOS.init();
-  },
-  { once: true }
-);
+
 const init = () => {
+  AOS.init({
+    once: true,
+  });
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
   swiperTraining();
