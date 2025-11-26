@@ -274,11 +274,30 @@ function headerMobile() {
     mainMenu.classList.toggle("active");
   });
 }
-
-const init = () => {
-  AOS.init({
-    once: true,
+function effectFade() {
+  gsap.utils.toArray(".data-fade-in").forEach((element) => {
+    gsap.fromTo(
+      element,
+      {
+        "will-change": "opacity, transform",
+        opacity: 0,
+        y: 20,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "bottom 80%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "sine.out",
+      }
+    );
   });
+}
+const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
   swiperTraining();
@@ -288,6 +307,7 @@ const init = () => {
   swiperPageFeedback();
   headerMobile();
   swiperIntruct();
+  effectFade();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
