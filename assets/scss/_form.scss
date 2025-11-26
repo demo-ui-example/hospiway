@@ -16,6 +16,9 @@
   }
   &.no-form {
     padding: 90px 0;
+    @media (max-width: 991px) {
+      padding: 80px 20px;
+    }
     .title {
       margin-bottom: 24px;
     }

@@ -75,17 +75,13 @@
       <section class="banner">
         <div class="container-fluid p-0">
           <div class="banner-wrapper">
-            <div class="banner-image">
+            <div class="banner-image d-none">
               <img src="./assets/images/banner.webp" alt="" />
             </div>
-            <div class="banner-video d-none">
-              <iframe
-                src="https://player.vimeo.com/video/1140152383?autoplay=1&loop=1&muted=1&controls=0"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
+            <div class="banner-video">
+              <video autoplay muted loop preload="auto" playsinline>
+                <source src="./assets/images/banner.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="banner-content">
               <div class="title h2-font color-white">
