@@ -237,20 +237,32 @@ function customDropdown() {
 function swiperPageFeedback() {
   if (!document.querySelector(".swiper-teach")) return;
   var swiper = new Swiper(".swiper-teach", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-teach .swiper-button-next",
       prevEl: ".feedback-teach .swiper-button-prev",
     },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
   });
   if (!document.querySelector(".swiper-video")) return;
   var swiper = new Swiper(".swiper-video", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-video .swiper-button-next",
       prevEl: ".feedback-video .swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
     },
   });
 }

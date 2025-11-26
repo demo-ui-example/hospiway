@@ -1796,11 +1796,24 @@ body {
   padding: 80px 0;
   background-color: #f8f8f8;
 }
+@media (max-width: 991px) {
+  .feeback-sec {
+    padding: 40px 0;
+  }
+}
 .feeback-sec .feedback-wrap {
   display: grid;
   grid-template-columns: 4fr 6fr;
   gap: 24px;
   margin-bottom: 80px;
+}
+@media (max-width: 991px) {
+  .feeback-sec .feedback-wrap {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
 }
 .feeback-sec .swiper {
   padding: 10px;
@@ -1811,11 +1824,29 @@ body {
   margin-left: -10px;
   margin-right: -10px;
 }
+@media (max-width: 991px) {
+  .feeback-sec .feedback-teach {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 64px;
+  }
+}
 .feeback-sec .feedback-teach .swiper-button-next {
   right: -54px;
 }
+@media (max-width: 991px) {
+  .feeback-sec .feedback-teach .swiper-button-next {
+    right: calc(50% - 45px);
+  }
+}
 .feeback-sec .feedback-teach .swiper-button-prev {
   left: -54px;
+}
+@media (max-width: 991px) {
+  .feeback-sec .feedback-teach .swiper-button-prev {
+    left: calc(50% - 45px);
+  }
 }
 .feeback-sec .feedback-video {
   margin-top: 40px;
@@ -1823,11 +1854,29 @@ body {
   margin-left: -10px;
   margin-right: -10px;
 }
+@media (max-width: 991px) {
+  .feeback-sec .feedback-video {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 64px;
+  }
+}
 .feeback-sec .feedback-video .swiper-button-next {
   right: -54px;
 }
+@media (max-width: 991px) {
+  .feeback-sec .feedback-video .swiper-button-next {
+    right: calc(50% - 45px);
+  }
+}
 .feeback-sec .feedback-video .swiper-button-prev {
   left: -54px;
+}
+@media (max-width: 991px) {
+  .feeback-sec .feedback-video .swiper-button-prev {
+    left: calc(50% - 45px);
+  }
 }
 .feeback-sec .custom-btn {
   width: 40px;
@@ -1835,6 +1884,12 @@ body {
   background-color: #fff;
   margin-top: -20px;
   transition: all 0.3s ease;
+}
+@media (max-width: 991px) {
+  .feeback-sec .custom-btn {
+    bottom: 0;
+    top: auto;
+  }
 }
 .feeback-sec .custom-btn:hover {
   background-color: var(--color-primary);

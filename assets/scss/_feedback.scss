@@ -1,11 +1,20 @@
 .feeback-sec {
   padding: 80px 0;
   background-color: #f8f8f8;
+  @media (max-width: 991px) {
+    padding: 40px 0;
+  }
   .feedback-wrap {
     display: grid;
     grid-template-columns: 4fr 6fr;
     gap: 24px;
     margin-bottom: 80px;
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+      padding: 0 20px;
+    }
   }
   .swiper {
     padding: 10px;
@@ -15,11 +24,23 @@
     position: relative;
     margin-left: -10px;
     margin-right: -10px;
+    @media (max-width: 991px) {
+      margin: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 64px;
+    }
     .swiper-button-next {
       right: -54px;
+      @media (max-width: 991px) {
+        right: calc(50% - 45px);
+      }
     }
     .swiper-button-prev {
       left: -54px;
+      @media (max-width: 991px) {
+        left: calc(50% - 45px);
+      }
     }
   }
   .feedback-video {
@@ -27,11 +48,23 @@
     position: relative;
     margin-left: -10px;
     margin-right: -10px;
+    @media (max-width: 991px) {
+      margin: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 64px;
+    }
     .swiper-button-next {
       right: -54px;
+      @media (max-width: 991px) {
+        right: calc(50% - 45px);
+      }
     }
     .swiper-button-prev {
       left: -54px;
+      @media (max-width: 991px) {
+        left: calc(50% - 45px);
+      }
     }
   }
   .custom-btn {
@@ -40,6 +73,10 @@
     background-color: #fff;
     margin-top: -20px;
     transition: all 0.3s ease;
+    @media (max-width: 991px) {
+      bottom: 0;
+      top: auto;
+    }
     &:hover {
       background-color: var(--color-primary);
       svg {
