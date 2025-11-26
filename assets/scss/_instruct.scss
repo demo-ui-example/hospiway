@@ -1,8 +1,13 @@
 .instruct {
   padding-bottom: 86px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   position: relative;
+  @media (max-width: 991px) {
+    padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   &::before {
     content: "";
     bottom: 0px;
@@ -41,11 +46,60 @@
     }
   }
   &-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // gap: 20px;
     position: relative;
     z-index: 3;
+    @media (max-width: 991px) {
+      padding-bottom: 64px;
+    }
+    .swiper {
+      overflow: hidden;
+      padding: 10px;
+    }
+    .custom-btn {
+      width: 40px;
+      height: 40px;
+      background-color: #f8f8f8;
+      margin-top: -20px;
+      transition: all 0.3s ease;
+      @media (max-width: 991px) {
+        bottom: 0;
+        top: auto;
+      }
+      &:hover {
+        background-color: var(--color-primary);
+        svg {
+          path {
+            stroke: #fff;
+          }
+        }
+      }
+      &::after {
+        content: "";
+        font-size: 0;
+      }
+      svg {
+        width: 13px;
+        height: 9px;
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+    }
+    .swiper-button-prev {
+      left: -20px;
+      @media (max-width: 991px) {
+        left: calc(50% - 45px);
+      }
+    }
+    .swiper-button-next {
+      right: -20px;
+      @media (max-width: 991px) {
+        right: calc(50% - 45px);
+      }
+    }
   }
   &-name {
     background-color: #fff;

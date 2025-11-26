@@ -27,6 +27,23 @@ function swiperCourse() {
     },
   });
 }
+function swiperIntruct() {
+  if (!document.querySelector(".swiper-instruct")) return;
+  var swiper = new Swiper(".swiper-instruct", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".instruct-list .swiper-button-next",
+      prevEl: ".instruct-list .swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
+}
 function swiperTraining() {
   if (!document.querySelector(".training-swiper")) return;
   var swiper = new Swiper(".training-swiper", {
@@ -254,6 +271,7 @@ const init = () => {
   customDropdown();
   swiperPageFeedback();
   headerMobile();
+  swiperIntruct();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body

@@ -715,10 +715,23 @@ body {
   padding-left: 40px;
   padding-right: 40px;
 }
+@media (max-width: 991px) {
+  .course.no-swiper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .course.no-swiper .course-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px 20px;
+}
+@media (max-width: 991px) {
+  .course.no-swiper .course-list {
+    grid-template-columns: 1fr;
+    gap: 40px 0;
+    padding-bottom: 0;
+  }
 }
 .course-title {
   margin-bottom: 38px;
@@ -1664,9 +1677,16 @@ body {
 
 .instruct {
   padding-bottom: 86px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   position: relative;
+}
+@media (max-width: 991px) {
+  .instruct {
+    padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 .instruct::before {
   content: "";
@@ -1706,11 +1726,63 @@ body {
   height: 7px;
 }
 .instruct-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
   position: relative;
   z-index: 3;
+}
+@media (max-width: 991px) {
+  .instruct-list {
+    padding-bottom: 64px;
+  }
+}
+.instruct-list .swiper {
+  overflow: hidden;
+  padding: 10px;
+}
+.instruct-list .custom-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #f8f8f8;
+  margin-top: -20px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 991px) {
+  .instruct-list .custom-btn {
+    bottom: 0;
+    top: auto;
+  }
+}
+.instruct-list .custom-btn:hover {
+  background-color: var(--color-primary);
+}
+.instruct-list .custom-btn:hover svg path {
+  stroke: #fff;
+}
+.instruct-list .custom-btn::after {
+  content: "";
+  font-size: 0;
+}
+.instruct-list .custom-btn svg {
+  width: 13px;
+  height: 9px;
+}
+.instruct-list .custom-btn svg path {
+  transition: all 0.3s ease;
+}
+.instruct-list .swiper-button-prev {
+  left: -20px;
+}
+@media (max-width: 991px) {
+  .instruct-list .swiper-button-prev {
+    left: calc(50% - 45px);
+  }
+}
+.instruct-list .swiper-button-next {
+  right: -20px;
+}
+@media (max-width: 991px) {
+  .instruct-list .swiper-button-next {
+    right: calc(50% - 45px);
+  }
 }
 .instruct-name {
   background-color: #fff;
