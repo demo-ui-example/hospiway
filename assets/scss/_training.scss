@@ -17,6 +17,9 @@
       .training-image img {
         transform: scale(1.05);
       }
+      .name {
+        color: var(--color-secondary);
+      }
     }
   }
   &-image {
@@ -36,6 +39,7 @@
   &-top {
     .name {
       margin-bottom: 8px;
+      transition: all 0.3s;
     }
   }
   &-list {

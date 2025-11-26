@@ -798,6 +798,9 @@ body {
 .course-item:hover .course-image img {
   transform: scale(1.05);
 }
+.course-item:hover .name {
+  color: var(--color-secondary);
+}
 .course .swiper {
   padding: 10px;
   overflow: hidden;
@@ -819,6 +822,7 @@ body {
 }
 .course-content .course-top .name {
   margin-bottom: 8px;
+  transition: all 0.3s;
 }
 .course-content .course-bottom {
   display: flex;
@@ -867,6 +871,9 @@ body {
 .training-item:hover .training-image img {
   transform: scale(1.05);
 }
+.training-item:hover .name {
+  color: var(--color-secondary);
+}
 .training-image {
   aspect-ratio: 325/217;
   width: 100%;
@@ -883,6 +890,7 @@ body {
 }
 .training-top .name {
   margin-bottom: 8px;
+  transition: all 0.3s;
 }
 .training-list {
   position: relative;
