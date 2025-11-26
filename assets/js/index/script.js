@@ -275,6 +275,7 @@ function headerMobile() {
   });
 }
 const init = () => {
+  AOS.init();
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
   swiperTraining();
