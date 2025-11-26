@@ -125,4 +125,11 @@
     font-weight: 600;
     color: rgba(255, 255, 255, 0.5);
   }
+
+  &-create {
+    transition: all 0.4s ease;
+    &:hover {
+      color: var(--color-secondary);
+    }
+  }
 }

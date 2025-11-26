@@ -17,14 +17,14 @@ function swiperCourse() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".course-list .swiper-button-next",
-      prevEl: ".course-list .swiper-button-prev",
+      prevEl: ".course-list .swiper-button-prev"
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
+        spaceBetween: 20
+      }
+    }
   });
 }
 function swiperIntruct() {
@@ -34,14 +34,14 @@ function swiperIntruct() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".instruct-list .swiper-button-next",
-      prevEl: ".instruct-list .swiper-button-prev",
+      prevEl: ".instruct-list .swiper-button-prev"
     },
     breakpoints: {
       991: {
         slidesPerView: 4,
-        spaceBetween: 20,
-      },
-    },
+        spaceBetween: 20
+      }
+    }
   });
 }
 function swiperTraining() {
@@ -51,14 +51,14 @@ function swiperTraining() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".training-list .swiper-button-next",
-      prevEl: ".training-list .swiper-button-prev",
+      prevEl: ".training-list .swiper-button-prev"
     },
     breakpoints: {
       991: {
         slidesPerView: 4,
-        spaceBetween: 20,
-      },
-    },
+        spaceBetween: 20
+      }
+    }
   });
 }
 function swiperTeam() {
@@ -74,30 +74,30 @@ function swiperTeam() {
     allowTouchMove: true,
     breakpoints: {
       991: {
-        allowTouchMove: false,
-      },
-    },
+        allowTouchMove: false
+      }
+    }
   });
   var swiperTeamContent = new Swiper(".swiper-content-team", {
     slidesPerView: 1,
     speed: 900,
     allowTouchMove: true,
     controller: {
-      control: swiperTeamImage,
+      control: swiperTeamImage
     },
     breakpoints: {
       991: {
-        allowTouchMove: false,
-      },
+        allowTouchMove: false
+      }
     },
     navigation: {
       nextEl: ".team-left .swiper-button-next",
-      prevEl: ".team-left .swiper-button-prev",
+      prevEl: ".team-left .swiper-button-prev"
     },
     pagination: {
       el: ".team-left .swiper-pagination",
-      type: "fraction",
-    },
+      type: "fraction"
+    }
   });
   swiperTeamImage.controller.control = swiperTeamContent;
 }
@@ -130,7 +130,7 @@ function marquee() {
     gsap.set(content, {
       x: 0,
       willChange: "transform",
-      force3D: true,
+      force3D: true
     });
 
     const tl = gsap.timeline({ repeat: -1 });
@@ -139,8 +139,8 @@ function marquee() {
       duration: fullWidth / speed,
       ease: "none",
       modifiers: {
-        x: (x) => `${parseFloat(x) % fullWidth}px`,
-      },
+        x: (x) => `${parseFloat(x) % fullWidth}px`
+      }
     });
 
     // Hover pause
@@ -241,14 +241,14 @@ function swiperPageFeedback() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-teach .swiper-button-next",
-      prevEl: ".feedback-teach .swiper-button-prev",
+      prevEl: ".feedback-teach .swiper-button-prev"
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
+        spaceBetween: 20
+      }
+    }
   });
   if (!document.querySelector(".swiper-video")) return;
   var swiper = new Swiper(".swiper-video", {
@@ -256,14 +256,14 @@ function swiperPageFeedback() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-video .swiper-button-next",
-      prevEl: ".feedback-video .swiper-button-prev",
+      prevEl: ".feedback-video .swiper-button-prev"
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
+        spaceBetween: 20
+      }
+    }
   });
 }
 function headerMobile() {
@@ -281,22 +281,94 @@ function effectFade() {
       {
         "will-change": "opacity, transform",
         opacity: 0,
-        y: 20,
+        y: 20
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%",
+          end: "bottom 80%"
         },
         opacity: 1,
         y: 0,
         duration: 0.5,
-        ease: "sine.out",
+        ease: "sine.out"
       }
     );
   });
 }
+
+function registerForm() {
+  if ($(".form-register-wrapper").length < 1) return;
+
+  const form = $(".form-register-wrapper form");
+
+  form.on("submit", function (e) {
+    e.preventDefault();
+
+    const fields = {
+      name: form.find("input[name='name']"),
+      phone: form.find("input[name='phonenumber']"),
+      email: form.find("input[name='email']"),
+      course: form.find(
+        ".form-field .dropdown-custom-select .dropdown-custom-text"
+      )
+    };
+    const message = form.find("texarea");
+
+    form.find(".error-message").remove();
+    form.find("input").removeClass("error");
+
+    let isValid = true;
+
+    $.each(fields, (key, field) => {
+      if (!field.val().trim()) {
+        field.addClass("error");
+        isValid = false;
+      }
+    });
+
+    if (!isValid) return;
+
+    $.ajax({
+      type: "POST",
+      url: ajaxUrl,
+      data: {
+        action: "form_register_course",
+        name: fields.name.val().trim(),
+        phone: fields.phone.val().trim(),
+        email: fields.email.val().trim(),
+        course: fields.course.text().trim(),
+        message: message.text().trim()
+      },
+      beforeSend: function () {
+        form.find("button[type='submit']").addClass("aloading");
+      },
+      success: function (res) {
+        form.find("button[type='submit']").removeClass("aloading");
+
+        form[0].reset();
+
+        const modalEl = document.getElementById("modalSuccess");
+        const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+
+        if (!modalEl.classList.contains("show")) {
+          modalInstance.show();
+        }
+
+        setTimeout(function () {
+          if (modalEl.classList.contains("show")) {
+            modalInstance.hide();
+          }
+        }, 10000);
+      },
+      error: function (xhr, status, error) {
+        console.error("Lỗi khi gửi form:", error);
+      }
+    });
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -308,6 +380,7 @@ const init = () => {
   headerMobile();
   swiperIntruct();
   effectFade();
+  registerForm();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body

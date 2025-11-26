@@ -94,6 +94,10 @@
               line-height: 14px;
             }
           }
+
+          &.error {
+            border-color: #ff0000;
+          }
         }
         label {
           position: absolute;
@@ -153,6 +157,10 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(26, 61, 78, 0.3);
     padding-bottom: 6px;
+
+    &:has(.dropdown-custom-text.error) {
+      border-color: #ff0000;
+    }
   }
   button {
     grid-column: 1 / 3;

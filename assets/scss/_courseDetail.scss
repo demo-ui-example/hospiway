@@ -9,6 +9,53 @@
       background-color: aliceblue;
     }
 
+    .content-text {
+      width: 100%;
+      height: 600px;
+      background-color: var(--color-primary);
+      padding: 40px;
+
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: 400;
+      color: var(--color-white);
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--color-primary);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--color-secondary);
+      }
+
+      * {
+        margin-bottom: 24px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      ul {
+        padding-left: 16px;
+        list-style: disc;
+      }
+
+      ol {
+        padding-left: 16px;
+        list-style: decimal;
+      }
+    }
+
     .announcement {
       height: 40px;
       display: flex;
@@ -22,8 +69,19 @@
   &__content {
     padding: 40px;
 
+    @media (max-width: 991px) {
+      padding: 40px 20px;
+    }
+
     .content-top {
       margin-bottom: 40px;
+
+      @media (max-width: 991px) {
+        flex-direction: column;
+        gap: 8px;
+        justify-content: flex-start;
+        align-items: flex-start !important;
+      }
     }
 
     .teacher {
@@ -45,6 +103,7 @@
           padding: 0;
           transition: all 0.4s ease;
           position: relative;
+          background-color: transparent;
 
           &.active,
           &:hover {
@@ -209,6 +268,7 @@
     // height: max-content;
     // position: sticky;
     // top: 60px;
+    background-color: var(--color-white);
 
     .course-progress {
       padding: 12px 40px 12px 20px;
