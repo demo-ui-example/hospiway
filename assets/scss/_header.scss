@@ -87,10 +87,25 @@
       grid-column: 3 / 4;
       gap: 18px;
     }
-    .logion-wrapper {
+    .login-wrapper {
       display: flex;
       align-items: center;
       gap: 8px;
+      color: var(--color-primary);
+
+      .icon {
+        width: 16px;
+        height: 16px;
+
+        path {
+          transition: all 0.4s ease;
+        }
+      }
+
+      &:hover {
+        color: var(--color-secondary);
+      }
+
       @media (max-width: 991px) {
         border-right: 1px solid rgba(#112448, 0.21);
         padding-right: 18px;
@@ -99,7 +114,9 @@
         font-size: 16px;
         line-height: 24px;
         font-weight: 600;
-        color: var(--color-primary);
+        // color: var(--color-primary);
+        transition: all 0.4s ease;
+
         @media (max-width: 991px) {
           font-size: 14px;
           line-height: 24px;

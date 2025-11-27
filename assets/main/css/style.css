@@ -254,25 +254,36 @@ body {
     gap: 18px;
   }
 }
-.header-login .logion-wrapper {
+.header-login .login-wrapper {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--color-primary);
+}
+.header-login .login-wrapper .icon {
+  width: 16px;
+  height: 16px;
+}
+.header-login .login-wrapper .icon path {
+  transition: all 0.4s ease;
+}
+.header-login .login-wrapper:hover {
+  color: var(--color-secondary);
 }
 @media (max-width: 991px) {
-  .header-login .logion-wrapper {
+  .header-login .login-wrapper {
     border-right: 1px solid rgba(17, 36, 72, 0.21);
     padding-right: 18px;
   }
 }
-.header-login .logion-wrapper .login-text {
+.header-login .login-wrapper .login-text {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  color: var(--color-primary);
+  transition: all 0.4s ease;
 }
 @media (max-width: 991px) {
-  .header-login .logion-wrapper .login-text {
+  .header-login .login-wrapper .login-text {
     font-size: 14px;
     line-height: 24px;
   }
