@@ -369,6 +369,27 @@ function registerForm() {
   });
 }
 
+let lightboxInstance;
+
+function sectionIntructionModal() {
+  if (
+    $("section.instruct").length < 1 &&
+    $(".feeback-sec .feedback-video").length < 1
+  )
+    return;
+
+  if ($(".glightbox").length === 0) return;
+
+  if (!lightboxInstance) {
+    lightboxInstance = GLightbox({
+      selector: ".glightbox",
+      loop: true,
+      touchNavigation: true,
+      autoplayVideos: true
+    });
+  }
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -381,6 +402,7 @@ const init = () => {
   swiperIntruct();
   effectFade();
   registerForm();
+  sectionIntructionModal();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
