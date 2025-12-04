@@ -137,4 +137,14 @@
   .swiper-button-next {
     right: -20px;
   }
+  &-bottom {
+    a {
+      &:first-child {
+        transition: all 0.3s ease;
+        &:hover {
+          color: var(--color-secondary);
+        }
+      }
+    }
+  }
 }

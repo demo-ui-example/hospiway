@@ -865,6 +865,12 @@ body {
 .course .swiper-button-next {
   right: -20px;
 }
+.course-bottom a:first-child {
+  transition: all 0.3s ease;
+}
+.course-bottom a:first-child:hover {
+  color: var(--color-secondary);
+}
 
 .training {
   padding: 48px 30px 38px;
@@ -2137,14 +2143,12 @@ body {
 
 .news-detail-wrapper {
   padding: 80px 0;
+  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 @media (max-width: 991px) {
   .news-detail-wrapper {
     padding: 40px 20px;
   }
-}
-.news-detail-wrapper {
-  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 .news-detail-wrapper .date {
   margin-top: 8px;
@@ -2659,6 +2663,7 @@ body {
 .course-detail .col-right .lesson-list .lesson-item {
   padding: 12px 0;
   border-bottom: 1px solid rgba(17, 36, 72, 0.2);
+  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item:first-child {
   padding-top: 0;
@@ -2666,9 +2671,6 @@ body {
 .course-detail .col-right .lesson-list .lesson-item:last-child {
   border-bottom: unset;
   padding-bottom: 0;
-}
-.course-detail .col-right .lesson-list .lesson-item {
-  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item::before {
   content: "";
