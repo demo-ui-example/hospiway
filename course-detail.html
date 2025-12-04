@@ -100,7 +100,11 @@
                     <li>item 2</li>
                   </ol>
                 </div>
-                <div class="announcement b2-font-m color-white">
+                <div
+                  class="announcement b2-font-m color-white"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCourseSuccess"
+                >
                   <div class="icon">
                     <img src="./assets/images/icon/academic-cap.svg" alt="" />
                   </div>
@@ -489,6 +493,43 @@
       </section>
     </main>
     <!-- layout -->
+
+    <div class="modal modal-success fade" tabindex="-1" id="modalCourseSuccess">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="icon">
+              <img src="./assets/images/icon/logo_modal_course.svg" alt="" />
+            </div>
+            <div class="title b2-font-m text-center">
+              Chúc mừng bạn đã hoàn thành xong khoá học
+            </div>
+            <div class="form">
+              <form action="">
+                <div class="field-item">
+                  <input
+                    type="text"
+                    class="b2-font-r"
+                    name="name"
+                    placeholder=" "
+                  />
+                  <label for="name" class="b2-font-r"
+                    >Nhập họ và tên <span>*</span></label
+                  >
+                </div>
+                <button
+                  type="submit"
+                  class="btn-font text-uppercase color-white"
+                >
+                  Nhận chứng chỉ
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- footer -->
     <script>
       fetch("./components/footer.html")

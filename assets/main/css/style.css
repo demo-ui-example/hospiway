@@ -157,6 +157,101 @@ body {
   background-color: var(--color-third);
 }
 
+.modal-success .modal-dialog {
+  width: 360px;
+  height: 360px;
+}
+@media (max-width: 767px) {
+  .modal-success .modal-dialog {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+}
+.modal-success .modal-content {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media (max-width: 991px) {
+  .modal-success .modal-content {
+    width: 320px;
+    height: 320px;
+  }
+}
+.modal-success .modal-content .desc {
+  margin-top: 16px;
+}
+.modal-success .modal-body {
+  height: 360px;
+  background: linear-gradient(to top left, #fffbeb 0%, #ffffff 40%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.modal-success .modal-body .icon {
+  width: 55px;
+  height: auto;
+  margin: 0 auto;
+}
+.modal-success .modal-body .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal-success .modal-body .title {
+  margin-top: 16px;
+}
+.modal-success .modal-body .form {
+  width: 100%;
+}
+.modal-success .modal-body .form .field-item {
+  margin-top: 32px;
+  position: relative;
+  border-bottom: 1px solid #000;
+}
+.modal-success .modal-body .form .field-item input {
+  border-radius: unset;
+  border: none;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+}
+.modal-success .modal-body .form .field-item input:not(:placeholder-shown) + label, .modal-success .modal-body .form .field-item input:focus + label, .modal-success .modal-body .form .field-item input:focus-visible + label {
+  opacity: 0;
+}
+.modal-success .modal-body .form .field-item label {
+  pointer-events: none;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  transition: opacity 0.2s ease;
+}
+.modal-success .modal-body .form .field-item label span {
+  color: red;
+}
+.modal-success .modal-body .form button {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  transition: all 0.4s ease;
+  border-radius: unset;
+  border: none;
+  box-shadow: unset;
+  margin-top: 40px;
+}
+.modal-success .modal-body .form button:hover {
+  background-color: var(--color-secondary);
+}
+
 #header {
   position: fixed;
   top: 0;

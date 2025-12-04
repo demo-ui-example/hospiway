@@ -390,6 +390,10 @@ function sectionIntructionModal() {
   }
 }
 
+function courseDetail() {
+  if ($("#modalCourseSuccess").length < 1) return;
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -403,6 +407,7 @@ const init = () => {
   effectFade();
   registerForm();
   sectionIntructionModal();
+  courseDetail();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
