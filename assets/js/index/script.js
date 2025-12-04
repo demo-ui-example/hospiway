@@ -390,6 +390,34 @@ function sectionIntructionModal() {
   }
 }
 
+function playVideoIntro() {
+  if ($(".introduction-video-wrapper").length < 1) return;
+
+  const wrapper = $(".introduction-video-wrapper");
+  const img = wrapper.find("img");
+  const video = wrapper.find("video").get(0);
+  const control = wrapper.find(".ic-control");
+
+  video.loop = true;
+
+  control.on("click", function () {
+    img.hide();
+    control.hide();
+    video.muted = false;
+    video.volume = 1;
+    video.play();
+  });
+
+  $(video).on("click", function () {
+    if (!video.paused) {
+      video.pause();
+      video.currentTime = 0;
+      img.show();
+      control.show();
+    }
+  });
+}
+
 function courseDetail() {
   if ($("#modalCourseSuccess").length < 1) return;
 }
@@ -408,6 +436,7 @@ const init = () => {
   registerForm();
   sectionIntructionModal();
   courseDetail();
+  playVideoIntro();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
