@@ -1469,6 +1469,8 @@ button.aloading::after {
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-size: 200% auto;
+  animation: gradientShift 3s ease-in-out infinite;
 }
 @media (max-width: 991px) {
   .info.not-home .info-why-item .big-title {
@@ -1527,6 +1529,8 @@ button.aloading::after {
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-size: 200% auto;
+  animation: gradientShift 3s ease-in-out infinite;
 }
 @media (max-width: 991px) {
   .info .info-why-item .big-title {
@@ -1606,6 +1610,17 @@ button.aloading::after {
   }
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
 .form-register {
   padding-bottom: 115px;
   padding-top: 48px;

@@ -27,6 +27,8 @@
         text-align: center;
         position: relative;
         overflow: hidden;
+        background-size: 200% auto;
+        animation: gradientShift 3s ease-in-out infinite;
         @media (max-width: 991px) {
           font-size: 48px;
           line-height: 80px;
@@ -82,6 +84,8 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      background-size: 200% auto;
+      animation: gradientShift 3s ease-in-out infinite;
       @media (max-width: 991px) {
         font-size: 48px;
         line-height: 80px;
@@ -150,5 +154,16 @@
     @media (max-width: 991px) {
       margin-bottom: 40px;
     }
+  }
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
   }
 }
