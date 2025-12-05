@@ -310,19 +310,22 @@ function registerForm() {
       name: form.find("input[name='name']"),
       phone: form.find("input[name='phonenumber']"),
       email: form.find("input[name='email']"),
-      course: form.find(
-        ".form-field .dropdown-custom-select .dropdown-custom-text"
-      )
+      course: form.find(".dropdown-custom-text")
     };
-    const message = form.find("texarea");
 
+    const message = form.find("textarea");
+
+    // Reset lỗi
     form.find(".error-message").remove();
-    form.find("input").removeClass("error");
+    form.find(".error").removeClass("error");
 
     let isValid = true;
 
+    // Validate input/name/phone/email
     $.each(fields, (key, field) => {
-      if (!field.val().trim()) {
+      const value = key === "course" ? field.text().trim() : field.val().trim();
+
+      if (!value) {
         field.addClass("error");
         isValid = false;
       }
@@ -330,6 +333,7 @@ function registerForm() {
 
     if (!isValid) return;
 
+    // AJAX
     $.ajax({
       type: "POST",
       url: ajaxUrl,
@@ -339,7 +343,7 @@ function registerForm() {
         phone: fields.phone.val().trim(),
         email: fields.email.val().trim(),
         course: fields.course.text().trim(),
-        message: message.text().trim()
+        message: message.val().trim()
       },
       beforeSend: function () {
         form.find("button[type='submit']").addClass("aloading");
@@ -347,20 +351,11 @@ function registerForm() {
       success: function (res) {
         form.find("button[type='submit']").removeClass("aloading");
 
+        const modalEl = document.getElementById("modalBookingSuccess");
+        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        modal.show();
+
         form[0].reset();
-
-        const modalEl = document.getElementById("modalSuccess");
-        const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
-
-        if (!modalEl.classList.contains("show")) {
-          modalInstance.show();
-        }
-
-        setTimeout(function () {
-          if (modalEl.classList.contains("show")) {
-            modalInstance.hide();
-          }
-        }, 10000);
       },
       error: function (xhr, status, error) {
         console.error("Lỗi khi gửi form:", error);

@@ -121,3 +121,127 @@
     }
   }
 }
+
+button {
+  &.aloading {
+    pointer-events: none;
+    color: transparent !important;
+    background-color: var(--color-secondary) !important;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid transparent;
+      border-radius: 50%;
+      border-top: 2px solid var(--color-white);
+      border-right: 2px solid var(--color-white);
+      width: 20px;
+      height: 20px;
+      animation: spin-animation 1s linear infinite;
+      z-index: 2;
+      background: 0 0;
+    }
+
+    @keyframes spin-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48px;
+  gap: 12px;
+
+  ul.page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    .page-numbers {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 600;
+      background-color: transparent;
+      color: var(--color-primary);
+      transition: all 0.4s ease;
+      border: 1px solid var(--color-primary);
+
+      @media (max-width: 991px) {
+        width: 30px;
+        height: 30px;
+      }
+      &:hover,
+      &.active,
+      &.current {
+        background-color: var(--color-secondary);
+        color: var(--color-white);
+        border-color: var(--color-secondary);
+      }
+
+      &.active {
+        pointer-events: none;
+      }
+
+      &.disabled {
+        opacity: 0.4;
+        pointer-events: none;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    margin-top: 16px;
+  }
+  .page-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    background-color: transparent;
+    color: var(--color-primary);
+    transition: all 0.4s ease;
+    border: 1px solid var(--color-primary);
+
+    @media (max-width: 991px) {
+      width: 30px;
+      height: 30px;
+    }
+    &:hover,
+    &.active {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      border-color: var(--color-secondary);
+    }
+
+    &.active {
+      pointer-events: none;
+    }
+
+    &.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  }
+}
