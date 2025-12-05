@@ -350,10 +350,7 @@ function registerForm() {
       },
       success: function (res) {
         form.find("button[type='submit']").removeClass("aloading");
-
-        const modalEl = document.getElementById("modalBookingSuccess");
-        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-        modal.show();
+        $("#modalBookingSuccess").modal("show");
 
         form[0].reset();
       },

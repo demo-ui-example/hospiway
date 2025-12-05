@@ -1670,6 +1670,13 @@ button.aloading::after {
 .form-register .dropdown-custom-select .dropdown-custom-item {
   color: #fff;
 }
+.form-register .dropdown-custom-select .dropdown-custom-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 .form-register .dropdown-custom-btn {
   display: flex;
   align-items: center;
