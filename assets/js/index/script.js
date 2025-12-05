@@ -17,14 +17,14 @@ function swiperCourse() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".course-list .swiper-button-next",
-      prevEl: ".course-list .swiper-button-prev"
+      prevEl: ".course-list .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function swiperIntruct() {
@@ -34,14 +34,14 @@ function swiperIntruct() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".instruct-list .swiper-button-next",
-      prevEl: ".instruct-list .swiper-button-prev"
+      prevEl: ".instruct-list .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 4,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function swiperTraining() {
@@ -51,14 +51,14 @@ function swiperTraining() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".training-list .swiper-button-next",
-      prevEl: ".training-list .swiper-button-prev"
+      prevEl: ".training-list .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 4,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function swiperTeam() {
@@ -67,6 +67,7 @@ function swiperTeam() {
     !document.querySelector(".swiper-content-team")
   )
     return;
+
   var swiperTeamImage = new Swiper(".team-image", {
     effect: "fade",
     slidesPerView: 1,
@@ -74,31 +75,70 @@ function swiperTeam() {
     allowTouchMove: true,
     breakpoints: {
       991: {
-        allowTouchMove: false
-      }
-    }
+        allowTouchMove: false,
+      },
+    },
   });
+
   var swiperTeamContent = new Swiper(".swiper-content-team", {
     slidesPerView: 1,
-    speed: 900,
+    speed: 600,
+    effect: "fade",
     allowTouchMove: true,
     controller: {
-      control: swiperTeamImage
+      control: swiperTeamImage,
     },
     breakpoints: {
       991: {
-        allowTouchMove: false
-      }
+        allowTouchMove: false,
+      },
     },
     navigation: {
       nextEl: ".team-left .swiper-button-next",
-      prevEl: ".team-left .swiper-button-prev"
+      prevEl: ".team-left .swiper-button-prev",
     },
     pagination: {
       el: ".team-left .swiper-pagination",
-      type: "fraction"
-    }
+      type: "fraction",
+    },
+    on: {
+      slideChangeTransitionStart: function () {
+        const allSlides = document.querySelectorAll(
+          ".swiper-content-team .swiper-slide"
+        );
+        allSlides.forEach((slide) => {
+          const elements = slide.querySelectorAll(
+            ".name, .position, .team-box-item"
+          );
+          elements.forEach((el) => el.classList.remove("fade-in-up"));
+        });
+
+        setTimeout(() => {
+          const activeSlide = this.slides[this.activeIndex];
+          const elements = activeSlide.querySelectorAll(
+            ".name, .position, .team-box-item"
+          );
+
+          elements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.08}s`;
+            el.classList.add("fade-in-up");
+          });
+        }, 200);
+      },
+      init: function () {
+        const activeSlide = this.slides[this.activeIndex];
+        const elements = activeSlide.querySelectorAll(
+          ".name, .position, .team-box-item"
+        );
+
+        elements.forEach((el, index) => {
+          el.style.animationDelay = `${index * 0.08}s`;
+          el.classList.add("fade-in-up");
+        });
+      },
+    },
   });
+
   swiperTeamImage.controller.control = swiperTeamContent;
 }
 function marquee() {
@@ -130,7 +170,7 @@ function marquee() {
     gsap.set(content, {
       x: 0,
       willChange: "transform",
-      force3D: true
+      force3D: true,
     });
 
     const tl = gsap.timeline({ repeat: -1 });
@@ -139,8 +179,8 @@ function marquee() {
       duration: fullWidth / speed,
       ease: "none",
       modifiers: {
-        x: (x) => `${parseFloat(x) % fullWidth}px`
-      }
+        x: (x) => `${parseFloat(x) % fullWidth}px`,
+      },
     });
 
     // Hover pause
@@ -241,14 +281,14 @@ function swiperPageFeedback() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-teach .swiper-button-next",
-      prevEl: ".feedback-teach .swiper-button-prev"
+      prevEl: ".feedback-teach .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
   if (!document.querySelector(".swiper-video")) return;
   var swiper = new Swiper(".swiper-video", {
@@ -256,14 +296,14 @@ function swiperPageFeedback() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-video .swiper-button-next",
-      prevEl: ".feedback-video .swiper-button-prev"
+      prevEl: ".feedback-video .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function headerMobile() {
@@ -281,18 +321,18 @@ function effectFade() {
       {
         "will-change": "opacity, transform",
         opacity: 0,
-        y: 20
+        y: 20,
       },
       {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%"
+          end: "bottom 80%",
         },
         opacity: 1,
         y: 0,
         duration: 0.5,
-        ease: "sine.out"
+        ease: "sine.out",
       }
     );
   });
@@ -310,7 +350,7 @@ function registerForm() {
       name: form.find("input[name='name']"),
       phone: form.find("input[name='phonenumber']"),
       email: form.find("input[name='email']"),
-      course: form.find(".dropdown-custom-text")
+      course: form.find(".dropdown-custom-text"),
     };
 
     const message = form.find("textarea");
@@ -343,7 +383,7 @@ function registerForm() {
         phone: fields.phone.val().trim(),
         email: fields.email.val().trim(),
         course: fields.course.text().trim(),
-        message: message.val().trim()
+        message: message.val().trim(),
       },
       beforeSend: function () {
         form.find("button[type='submit']").addClass("aloading");
@@ -359,7 +399,7 @@ function registerForm() {
       },
       error: function (xhr, status, error) {
         console.error("Lỗi khi gửi form:", error);
-      }
+      },
     });
   });
 }
@@ -380,7 +420,7 @@ function sectionIntructionModal() {
       selector: ".glightbox",
       loop: true,
       touchNavigation: true,
-      autoplayVideos: true
+      autoplayVideos: true,
     });
   }
 }
