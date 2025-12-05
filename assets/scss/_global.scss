@@ -7,9 +7,39 @@
   background-color: var(--color-secondary);
   transition: all 0.3s ease;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+  &.full {
+    &::before {
+      width: 190%;
+      left: -44%;
+      background-color: var(--color-secondary);
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: var(--color-third);
+    width: 130%;
+    height: 0;
+    padding-bottom: 130%;
+    top: -65%;
+    left: -15%;
+    border-radius: 50%;
+    transform: translate3d(0, 75%, 0) scale3d(0, 0, 0);
+    transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+    z-index: 2;
+  }
+  span {
+    position: relative;
+    z-index: 3;
+  }
   &:hover {
     color: #fff;
-    background-color: var(--color-third);
+    &::before {
+      transform: translate3d(0, -5%, 0) scale3d(1, 1, 1);
+      transition: transform 0.6s cubic-bezier(0.1, 0, 0.3, 1);
+    }
   }
 }
 
@@ -243,5 +273,54 @@ button {
       opacity: 0.4;
       pointer-events: none;
     }
+  }
+}
+.ocean-animation {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.ocean {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  .wave {
+    position: absolute;
+    background-image: url("../../images/icon/wave-2.svg");
+    max-width: 3000px;
+    width: 100%;
+    height: 295px;
+    background-repeat: repeat-x;
+
+    opacity: 0.3;
+    transform: translate3d(0, 0, 0);
+    animation: swell 7s ease -1.25s infinite;
+    @media (max-width: 991px) {
+      background-size: cover;
+    }
+    &:nth-child(2) {
+      top: 10px;
+      background-image: url("../../images/icon/wave-1.svg");
+      animation: wave 17s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+        swell 7s ease -0.75s infinite;
+    }
+    &:nth-child(3) {
+      top: 30px;
+      background-image: url("../../images/icon/wave-3.svg");
+      animation: swell 7s ease -0.25s infinite;
+    }
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -15px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
   }
 }

@@ -18,7 +18,7 @@
     }
   }
   &::before {
-    content: "";
+    content: unset;
     bottom: -30px;
     left: 0;
     position: absolute;
@@ -33,6 +33,7 @@
       bottom: -180px;
     }
   }
+
   &-image {
     width: 100%;
     aspect-ratio: 555 / 620;

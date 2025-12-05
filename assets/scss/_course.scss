@@ -118,6 +118,31 @@
       justify-content: space-between;
       .btn-register {
         gap: 8px;
+        .text {
+          transition: all 0.3s ease;
+        }
+        &:hover {
+          .text {
+            color: var(--color-secondary);
+          }
+          .icon {
+            transform: translateX(8px);
+            svg {
+              path {
+                stroke: var(--color-secondary);
+              }
+            }
+          }
+        }
+        .icon {
+          padding-right: 8px;
+          transition: transform 0.3s;
+          svg {
+            path {
+              transition: all 0.3s ease;
+            }
+          }
+        }
       }
     }
   }

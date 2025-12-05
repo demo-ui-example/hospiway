@@ -9,30 +9,6 @@
     background: #fff;
     padding-bottom: 0;
     .info-why-item {
-      .big-title {
-        font-size: 64px;
-        line-height: 80px;
-        font-weight: 700;
-
-        background: linear-gradient(
-          80.53deg,
-          #112448 -8.86%,
-          #d9a640 29.79%
-        ) !important;
-        background-clip: text !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        color: transparent !important;
-        margin-bottom: 48px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        @media (max-width: 991px) {
-          font-size: 48px;
-          line-height: 80px;
-          margin-bottom: 24px;
-        }
-      }
     }
     &::before {
       content: unset;
@@ -82,6 +58,8 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      background-size: 200% auto;
+      animation: gradientShift 3s ease-in-out infinite;
       @media (max-width: 991px) {
         font-size: 48px;
         line-height: 80px;
@@ -98,6 +76,39 @@
         box-shadow: 0 0 40px 20px #00000066;
         border-radius: 50%;
       }
+    }
+    .dark-color {
+      font-size: 64px;
+      line-height: 80px;
+      font-weight: 700;
+      background: linear-gradient(81.77deg, #112448 1.5%, #d9a640 90.06%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      margin-bottom: 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background-size: 200% auto;
+      animation: gradientShift 3s ease-in-out infinite;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 10px;
+        background: transparent;
+        box-shadow: 0 0 40px 20px #00000066;
+        border-radius: 50%;
+      }
+    }
+    @media (max-width: 991px) {
+      font-size: 48px;
+      line-height: 80px;
+      margin-bottom: 24px;
     }
     .description {
       text-align: center;
@@ -150,5 +161,16 @@
     @media (max-width: 991px) {
       margin-bottom: 40px;
     }
+  }
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
   }
 }
