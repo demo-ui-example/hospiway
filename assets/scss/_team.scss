@@ -15,6 +15,9 @@
   @media (max-width: 991px) {
     padding: 0px 20px 40px;
   }
+  &-wrapper {
+    height: 620px;
+  }
   &-title {
     margin-bottom: 24px;
   }
@@ -32,6 +35,7 @@
     margin-right: calc(calc(1 / 12) * 100% + 48px);
     margin-left: calc(calc(1 / 12) * 100% + 48px);
     padding-top: 48px;
+    padding-bottom: 48px;
     position: relative;
     @media (max-width: 991px) {
       margin-left: 20px;
@@ -138,6 +142,42 @@
   }
 }
 .swiper-content-team {
+  .team-box {
+    height: 530px;
+    overflow-y: scroll;
+    padding-right: 10px;
+
+    &-desc {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 15px;
+        line-height: 24px;
+        margin-top: 8px;
+        font-weight: 600;
+      }
+
+      p,
+      ul {
+        margin-top: 8px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-secondary);
+    }
+  }
   .name,
   .position,
   .team-box-item {

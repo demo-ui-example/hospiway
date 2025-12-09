@@ -515,7 +515,7 @@ const init = () => {
   sectionIntructionModal();
   courseDetail();
   sectionIntro();
-  sectionInfo();
+  // sectionInfo();
   initFadeInSections();
   // playVideoIntro();
 };
