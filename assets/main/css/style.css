@@ -2953,7 +2953,16 @@ button.aloading::after {
   transform: translateX(-5px) translateY(-50%);
 }
 .course-detail .col-right {
+  height: calc(100dvh - 61px);
+  position: sticky;
+  right: 0;
+  top: 61px;
   background-color: var(--color-white);
+}
+@media (max-width: 991px) {
+  .course-detail .col-right {
+    height: auto;
+  }
 }
 .course-detail .col-right .course-progress {
   padding: 12px 40px 12px 20px;

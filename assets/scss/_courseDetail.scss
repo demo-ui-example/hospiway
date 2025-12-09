@@ -265,10 +265,15 @@
   }
 
   .col-right {
-    // height: max-content;
-    // position: sticky;
-    // top: 60px;
+    height: calc(100dvh - 61px);
+    position: sticky;
+    right: 0;
+    top: 61px;
     background-color: var(--color-white);
+
+    @media (max-width: 991px) {
+      height: auto;
+    }
 
     .course-progress {
       padding: 12px 40px 12px 20px;

@@ -414,7 +414,8 @@ let lightboxInstance;
 function sectionIntructionModal() {
   if (
     $("section.instruct").length < 1 &&
-    $(".feeback-sec .feedback-video").length < 1
+    $(".feeback-sec .feedback-video").length < 1 &&
+    $(".introduction").length < 1
   )
     return;
 
@@ -462,6 +463,43 @@ function courseDetail() {
   if ($("#modalCourseSuccess").length < 1) return;
 }
 
+function sectionIntro() {
+  if ($(".introduction").length < 1) return;
+
+  gsap.from(".introduction .col-left li", {
+    scrollTrigger: {
+      trigger: ".introduction .col-left",
+      start: "top 80%"
+    },
+    opacity: 0,
+    x: -40,
+    duration: 0.5,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
+}
+
+function initFadeInSections() {
+  const sections = document.querySelectorAll(".has-item-fade-in");
+
+  sections.forEach((section) => {
+    const items = section.querySelectorAll(".fade-in-item");
+    if (items.length < 1) return;
+
+    gsap.from(items, {
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%"
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.4,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -476,7 +514,10 @@ const init = () => {
   registerForm();
   sectionIntructionModal();
   courseDetail();
-  playVideoIntro();
+  sectionIntro();
+  sectionInfo();
+  initFadeInSections();
+  // playVideoIntro();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
