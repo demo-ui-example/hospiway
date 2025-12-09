@@ -710,8 +710,8 @@ button.aloading::after {
 @media (max-width: 991px) {
   .footer-follow ul.follow-us {
     display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 8px 20px;
+    grid-template-columns: 109.7px max-content;
+    gap: 8px 64px;
   }
 }
 .footer-follow ul.follow-us li a {
@@ -1116,7 +1116,7 @@ button.aloading::after {
 }
 .course-item {
   position: relative;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.045);
 }
 .course-item:hover .course-image img {
   transform: scale(1.05);
@@ -1314,7 +1314,7 @@ button.aloading::after {
 }
 @media (max-width: 991px) {
   .team {
-    padding: 40px 20px;
+    padding: 0px 20px 40px;
   }
 }
 .team-title {
