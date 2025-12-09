@@ -319,8 +319,8 @@ function effectFade() {
     .toArray(".data-fade-in, .fade-in-left, .fade-in-right")
     .forEach((element) => {
       let xValue = 0;
-      if (element.classList.contains("fade-in-left")) xValue = -20;
-      if (element.classList.contains("fade-in-right")) xValue = 20;
+      if (element.classList.contains("fade-in-left")) xValue = -30;
+      if (element.classList.contains("fade-in-right")) xValue = 30;
 
       gsap.fromTo(
         element,
