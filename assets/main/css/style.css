@@ -3099,6 +3099,12 @@ button.aloading::after {
   padding: 12px 0;
   border-bottom: 1px solid rgba(17, 36, 72, 0.2);
 }
+.course-detail .col-right .lesson-list .lesson-item a {
+  pointer-events: none;
+}
+.course-detail .col-right .lesson-list .lesson-item.active a {
+  pointer-events: auto;
+}
 .course-detail .col-right .lesson-list .lesson-item:first-child {
   padding-top: 0;
 }

@@ -500,6 +500,55 @@ function initFadeInSections() {
   });
 }
 
+function updateCompleteLesson() {
+  $(".lesson-list").on("click", ".complete-lesson", function () {
+    let btn = $(this);
+    let parent = btn.closest(".lesson-item");
+    let lessonID =
+      parent.data("lesson-id") ||
+      parent.attr("href").split("/").filter(Boolean).pop();
+
+    $.ajax({
+      url: ajaxUrl,
+      type: "POST",
+      data: {
+        action: "mark_lesson_complete",
+        lesson_id: lessonID
+      },
+      beforeSend: function () {
+        btn.addClass("aloading");
+      },
+      success: function (res) {
+        if (res.success) {
+          // đổi giao diện
+          parent.addClass("done");
+
+          btn.addClass("d-none");
+          parent.find(".continue").removeClass("d-none");
+
+          // cập nhật progress (nếu có)
+          updateProgressBar();
+        }
+      }
+    });
+  });
+}
+
+function updateProgressBar() {
+  let done = $(".lesson-item.done").length;
+  let total = $(".lesson-item").length;
+
+  let percent = Math.round((done / total) * 100);
+
+  $(".course-progress").css("--progress", percent + "%");
+  $(".progress-value").text(percent + "%");
+
+  // nếu hoàn thành 100% thì mở modal
+  if (percent >= 100) {
+    // $("#modalCourseSuccess").modal("show");
+  }
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -515,7 +564,7 @@ const init = () => {
   sectionIntructionModal();
   courseDetail();
   sectionIntro();
-  // sectionInfo();
+  updateCompleteLesson();
   initFadeInSections();
   // playVideoIntro();
 };
