@@ -1254,6 +1254,11 @@ button.aloading::after {
 .training-title {
   margin-bottom: 38px;
 }
+@media (max-width: 991px) {
+  .training-title {
+    margin-bottom: 24px;
+  }
+}
 .training .swiper {
   padding: 10px;
   overflow: hidden;
@@ -2213,6 +2218,11 @@ button.aloading::after {
 }
 .instruct-title {
   margin-bottom: 48px;
+}
+@media (max-width: 991px) {
+  .instruct-title {
+    margin-bottom: 24px;
+  }
 }
 .instruct-video {
   position: relative;
