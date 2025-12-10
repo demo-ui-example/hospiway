@@ -549,6 +549,186 @@ function updateProgressBar() {
   }
 }
 
+// course detail
+function lessonCompleteHandler() {
+  const box = document.querySelector(".course-detail__video");
+  if (!box) return;
+
+  const lessonId = box.dataset.lessonId;
+  const lessonType = box.dataset.lessonType;
+  const lessonDuration = parseInt(box.dataset.lessonDuration || 0);
+
+  if (lessonType === "video") {
+    handleVideoLesson(lessonId);
+  } else if (lessonType === "document") {
+    handleDocumentLesson(lessonId, lessonDuration);
+  }
+}
+
+function handleVideoLesson(lessonId) {
+  const video = document.querySelector("#lesson-video");
+  if (!video) return;
+
+  video.addEventListener("ended", function () {
+    appendCompleteButton(lessonId);
+  });
+}
+
+// function handleDocumentLesson(lessonId, duration) {
+//   if (!duration || duration < 1) duration = 2;
+
+//   const time_ms = duration * 60 * 1000;
+
+//   setTimeout(() => {
+//     appendCompleteButton(lessonId);
+//   }, time_ms);
+// }
+
+function handleDocumentLesson(lessonId, duration) {
+  if (!duration || duration < 1) duration = 2;
+
+  let seconds = duration * 60;
+  console.log("Document duration:", seconds, "seconds");
+
+  // Đếm ngược
+  const countdownInterval = setInterval(() => {
+    seconds--;
+    console.log("Document countdown:", seconds, "s");
+
+    if (seconds <= 0) {
+      clearInterval(countdownInterval);
+    }
+  }, 1000);
+
+  setTimeout(() => {
+    appendCompleteButton(lessonId);
+    console.log("Document: time completed → show button");
+  }, duration * 60 * 1000);
+}
+
+function appendCompleteButton(lessonId) {
+  $.ajax({
+    url: ajaxUrl,
+    type: "POST",
+    dataType: "json",
+    data: {
+      action: "update_lesson_status",
+      lesson_id: lessonId,
+      status: "studied"
+    },
+    success: function (res) {
+      console.log("Status updated to studied:", res);
+
+      $(
+        `.lesson-item[data-lesson-id='${lessonId}'] .complete-lesson`
+      ).removeClass("disabled");
+    }
+  });
+}
+
+function openModalCompleteCourse() {
+  $(document).on("click", ".course-detail .announcement", function (e) {
+    e.preventDefault();
+
+    const courseID = $(this).data("course-id");
+    $("#modalCourseSuccess").modal("show");
+
+    // $.ajax({
+    //   url: ajaxUrl,
+    //   type: "POST",
+    //   dataType: "json",
+    //   data: {
+    //     action: "check_course_completed",
+    //     course_id: courseID
+    //   },
+    //   success: function (res) {
+    //     if (res.success && res.data.completed) {
+    //       $("#modalCourseSuccess").modal("show");
+    //     } else {
+    //       console.log("Course not completed yet");
+    //     }
+    //   }
+    // });
+  });
+}
+
+function submitCertificateForm() {
+  const form = $("#certificateForm");
+  if (form.length < 1) return;
+
+  form.on("submit", function (e) {
+    e.preventDefault();
+
+    const input = form.find("input[name='name']");
+    const fullName = input.val().trim();
+
+    if (!fullName) {
+      input.addClass("error");
+      return;
+    } else {
+      input.removeClass("error");
+    }
+
+    const submitBtn = form.find("button[type='submit']");
+    const courseId = submitBtn.data("course-id");
+    const userId = submitBtn.data("user-id");
+
+    $.post(
+      ajaxUrl,
+      {
+        action: "get_certificate_info",
+        course_id: courseId,
+        user_id: userId
+      },
+      function (res) {
+        const finalUserName = fullName || res.user_name;
+
+        $("#certUserName").text(finalUserName);
+        $("#certCourseName").text(res.course_name);
+
+        $("#modalCourseSuccess").modal("hide");
+
+        setTimeout(() => {
+          $("#modalCourseCertificate").modal("show");
+        }, 300);
+      }
+    );
+  });
+}
+
+function downloadPDFCertificate() {
+  function downloadCertificatePDF() {
+    const area = document.getElementById("certificateArea");
+    if (!area) return;
+
+    const btn = $("#btnDownloadPDF");
+    btn.addClass("aloading");
+
+    html2canvas(area, {
+      scale: 2,
+      useCORS: true
+    })
+      .then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+
+        const pdf = new jspdf.jsPDF("landscape", "px", [
+          canvas.width,
+          canvas.height
+        ]);
+        pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+
+        pdf.save("certificate.pdf");
+      })
+      .finally(() => {
+        btn.removeClass("aloading");
+      });
+  }
+
+  $(document).on("click", "#btnDownloadPDF", function () {
+    downloadCertificatePDF();
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -566,6 +746,11 @@ const init = () => {
   sectionIntro();
   updateCompleteLesson();
   initFadeInSections();
+  lessonCompleteHandler();
+  openModalCompleteCourse();
+  submitCertificateForm();
+  // $("#modalCourseCertificate").modal("show");
+  downloadPDFCertificate();
   // playVideoIntro();
 };
 preloadImages("img").then(() => {

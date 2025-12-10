@@ -330,3 +330,98 @@ button {
     transform: translate3d(0, 5px, 0);
   }
 }
+
+#modalCourseCertificate {
+  .modal-dialog {
+    height: 500px;
+    width: 800px;
+    max-width: 100%;
+  }
+  .modal-body {
+    height: auto;
+    background: transparent;
+    padding: 0;
+  }
+  .modal-content {
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .certificate-wrapper {
+    position: relative;
+
+    .name {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      top: 250px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 17px;
+      line-height: 27px;
+      font-weight: 600;
+    }
+
+    .username {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+  }
+
+  .btn-download-pdf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 50px;
+    color: var(--color-white);
+    transition: all 0.4s ease;
+    background-color: var(--color-primary);
+    margin-top: 24px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+
+    &.aloading {
+      pointer-events: none;
+      color: transparent !important;
+      background-color: var(--color-secondary) !important;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid transparent;
+        border-radius: 50%;
+        border-top: 2px solid var(--color-white);
+        border-right: 2px solid var(--color-white);
+        width: 20px;
+        height: 20px;
+        animation: spin-animation 1s linear infinite;
+        z-index: 2;
+        background: 0 0;
+      }
+
+      @keyframes spin-animation {
+        0% {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    }
+  }
+}
