@@ -553,6 +553,47 @@ button.aloading::after {
     background-position: 0 0;
   }
 }
+#mobileTabDropdown .dropdown-custom-item.active {
+  display: none !important;
+}
+
+.dropdown-custom {
+  position: relative;
+  margin: 0 20px;
+  margin-bottom: 24px;
+}
+.dropdown-custom span {
+  color: var(--color-primary);
+}
+.dropdown-custom .dropdown-custom-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9;
+  background-color: var(--color-secondary);
+  width: 100%;
+  clip-path: inset(0 0 100% 0);
+  will-change: clip-path;
+  transition: clip-path 0.3s ease;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dropdown-custom .dropdown-custom-menu.dropdown--active {
+  clip-path: inset(0 0 0 0);
+}
+.dropdown-custom .dropdown-custom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(26, 61, 78, 0.3);
+}
+.dropdown-custom .dropdown-custom-item span {
+  color: #fff;
+}
+
 #header {
   position: fixed;
   top: 0;

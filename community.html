@@ -87,7 +87,12 @@
           <div class="row g-0 d-flex justify-content-center">
             <div class="col-lg-10">
               <div class="news-wrapper">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <!-- Tabs cho desktop -->
+                <ul
+                  class="nav nav-tabs d-none d-md-flex"
+                  id="myTab"
+                  role="tablist"
+                >
                   <li class="nav-item" role="presentation">
                     <button
                       class="nav-link b2-font color-primary active"
@@ -131,6 +136,37 @@
                     </button>
                   </li>
                 </ul>
+
+                <!-- Dropdown custom cho mobile -->
+                <div class="dropdown-custom d-md-none" id="mobileTabDropdown">
+                  <div class="dropdown-custom-btn" data-tab="community-1">
+                    <div class="value-select">
+                      <span>Lớp online miễn phí</span>
+                    </div>
+                    <div class="icon">
+                      <svg
+                        width="12"
+                        height="6"
+                        viewBox="0 0 12 6"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.316406 0.386963L5.81641 4.88696L11.3164 0.386963"
+                          stroke="#112448"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="dropdown-custom-menu">
+                    <div class="dropdown-custom-item" data-tab="community-2">
+                      <span>Sinh hoạt</span>
+                    </div>
+                    <div class="dropdown-custom-item" data-tab="community-3">
+                      <span>Thiện nguyện</span>
+                    </div>
+                  </div>
+                </div>
                 <div class="tab-content" id="myTabContent">
                   <div
                     class="tab-pane fade show active"

@@ -795,6 +795,71 @@ function hideDevTools() {
 
   setInterval(detect, 500);
 }
+function dropdownCommunity() {
+  const dropdown = document.getElementById("mobileTabDropdown");
+  if (!dropdown) return;
+
+  const dropdownBtn = dropdown.querySelector(".dropdown-custom-btn");
+  const dropdownItems = dropdown.querySelectorAll(".dropdown-custom-item");
+  const valueSelect = dropdown.querySelector(".value-select span");
+
+  // Toggle dropdown
+  dropdownBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdown.classList.toggle("active");
+  });
+
+  // Close dropdown when click outside
+  document.addEventListener("click", function (e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("active");
+    }
+  });
+
+  // Handle item click
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const tabId = this.getAttribute("data-tab");
+      const tabNumber = tabId.slice(-1);
+
+      // Update button data-tab
+      dropdownBtn.setAttribute("data-tab", tabId);
+
+      // Update dropdown text
+      valueSelect.textContent = this.querySelector("span").textContent;
+
+      // Trigger tab change
+      const tabButton = document.querySelector(`#community-tab-${tabNumber}`);
+      if (tabButton) {
+        const tab = new bootstrap.Tab(tabButton);
+        tab.show();
+      }
+
+      // Close dropdown
+      dropdown.classList.remove("active");
+    });
+  });
+
+  // Sync dropdown with tab clicks
+  document
+    .querySelectorAll('button[data-bs-toggle="tab"]')
+    .forEach((button) => {
+      button.addEventListener("shown.bs.tab", function (e) {
+        const target = e.target.getAttribute("data-bs-target").substring(1);
+        const tabNumber = target.slice(-1);
+
+        dropdownBtn.setAttribute("data-tab", target);
+
+        // Update text based on tab number
+        const texts = {
+          1: "Lớp online miễn phí",
+          2: "Sinh hoạt",
+          3: "Thiện nguyện"
+        };
+        valueSelect.textContent = texts[tabNumber];
+      });
+    });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   swiperCourse();
@@ -820,6 +885,7 @@ const init = () => {
   // playVideoIntro();
   swiperBanner();
   hideDevTools();
+  dropdownCommunity();
 };
 preloadImages("img").then(() => {
   // Once images are preloaded, remove the 'loading' indicator/class from the body
