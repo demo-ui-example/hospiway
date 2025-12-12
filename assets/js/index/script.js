@@ -508,12 +508,17 @@ function updateCompleteLesson() {
       parent.data("lesson-id") ||
       parent.attr("href").split("/").filter(Boolean).pop();
 
+    const courseID = $(".course-detail .course-detail__video").data(
+      "course-id"
+    );
+
     $.ajax({
       url: ajaxUrl,
       type: "POST",
       data: {
         action: "mark_lesson_complete",
-        lesson_id: lessonID
+        lesson_id: lessonID,
+        course_id: courseID
       },
       beforeSend: function () {
         btn.addClass("aloading");
@@ -528,6 +533,10 @@ function updateCompleteLesson() {
 
           // cập nhật progress (nếu có)
           updateProgressBar();
+        }
+
+        if (res.data.course_completed) {
+          $(".course-detail .announcement").removeClass("d-none");
         }
       }
     });
@@ -614,7 +623,7 @@ function appendCompleteButton(lessonId) {
     data: {
       action: "update_lesson_status",
       lesson_id: lessonId,
-      status: "studied"
+      status: "completed"
     },
     success: function (res) {
       console.log("Status updated to studied:", res);
@@ -622,6 +631,10 @@ function appendCompleteButton(lessonId) {
       $(
         `.lesson-item[data-lesson-id='${lessonId}'] .complete-lesson`
       ).removeClass("disabled");
+
+      if (res.data.course_complete) {
+        $(".course-detail .announcement").removeClass("d-none");
+      }
     }
   });
 }

@@ -3189,6 +3189,9 @@ button.aloading::after {
   pointer-events: none;
 }
 .course-detail .col-right .lesson-list .lesson-item.active a {
+  color: var(--color-secondary);
+}
+.course-detail .col-right .lesson-list .lesson-item.active a, .course-detail .col-right .lesson-list .lesson-item.continue a, .course-detail .col-right .lesson-list .lesson-item.done a {
   pointer-events: auto;
 }
 .course-detail .col-right .lesson-list .lesson-item:first-child {

@@ -391,6 +391,14 @@
 
         &.active {
           a {
+            color: var(--color-secondary);
+          }
+        }
+
+        &.active,
+        &.continue,
+        &.done {
+          a {
             pointer-events: auto;
           }
         }
