@@ -2460,6 +2460,9 @@ button.aloading::after {
   padding: 80px 0;
   background-color: #f8f8f8;
 }
+.feeback-sec .title {
+  margin-bottom: 48px;
+}
 @media (max-width: 991px) {
   .feeback-sec {
     padding: 40px 0;
@@ -2711,12 +2714,14 @@ button.aloading::after {
 
 .news-detail-wrapper {
   padding: 80px 0;
-  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 @media (max-width: 991px) {
   .news-detail-wrapper {
     padding: 40px 20px;
   }
+}
+.news-detail-wrapper {
+  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 .news-detail-wrapper .date {
   margin-top: 8px;
@@ -2880,12 +2885,13 @@ button.aloading::after {
   content: "";
   position: absolute;
   left: 2px;
-  top: 2px;
+  top: 50%;
+  transform: translateY(calc(0.5px - 50%));
   height: calc(100% - 4px);
   width: calc(var(--progress) - 4px);
   background: var(--color-secondary);
   transition: width 0.3s ease;
-  border-radius: 50px 0 0 50px;
+  border-radius: 50px;
 }
 .my-course-wrapper .col-right .course-list .course-item .course-progress .progress-bar .progress-value {
   position: absolute;
@@ -3175,12 +3181,13 @@ button.aloading::after {
   content: "";
   position: absolute;
   left: 2px;
-  top: 2px;
+  top: 50%;
+  transform: translateY(calc(0.5px - 50%));
   height: calc(100% - 4px);
   width: calc(var(--progress) - 4px);
   background: var(--color-secondary);
   transition: width 0.3s ease;
-  border-radius: 50px 0 0 50px;
+  border-radius: 50px;
 }
 .course-detail .col-right .course-progress .progress-bar .progress-value {
   position: absolute;
@@ -3241,7 +3248,6 @@ button.aloading::after {
 .course-detail .col-right .lesson-list .lesson-item {
   padding: 12px 0;
   border-bottom: 1px solid rgba(17, 36, 72, 0.2);
-  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item a {
   pointer-events: none;
@@ -3258,6 +3264,9 @@ button.aloading::after {
 .course-detail .col-right .lesson-list .lesson-item:last-child {
   border-bottom: unset;
   padding-bottom: 0;
+}
+.course-detail .col-right .lesson-list .lesson-item {
+  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item::before {
   content: "";
@@ -3341,6 +3350,7 @@ button.aloading::after {
 
 .faq {
   padding-bottom: 80px;
+  padding-top: 40px;
 }
 @media (max-width: 991px) {
   .faq {
@@ -3365,6 +3375,30 @@ button.aloading::after {
   height: 360px;
   padding-right: 20px;
   overflow-y: scroll;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--color-primary);
+  overflow-y: scroll;
+}
+.faq .desc * {
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 24px;
+}
+.faq .desc *:last-child {
+  margin-bottom: 0;
+}
+.faq .desc li {
+  margin-bottom: 4px;
+}
+.faq .desc ul {
+  padding-left: 16px;
+  list-style: disc;
+}
+.faq .desc ol {
+  padding-left: 16px;
+  list-style: decimal;
 }
 .faq .desc::-webkit-scrollbar {
   width: 2px;

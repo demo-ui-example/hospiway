@@ -302,13 +302,14 @@
           content: "";
           position: absolute;
           left: 2px;
-          top: 2px;
+          top: 50%;
+          transform: translateY(calc(0.5px - 50%));
           height: calc(100% - 4px);
           width: calc(var(--progress) - 4px);
           background: var(--color-secondary);
           // border-radius: inherit;
           transition: width 0.3s ease;
-          border-radius: 50px 0 0 50px;
+          border-radius: 50px;
         }
 
         .progress-value {

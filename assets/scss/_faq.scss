@@ -1,5 +1,6 @@
 .faq {
   padding-bottom: 80px;
+  padding-top: 40px;
   @media (max-width: 991px) {
     padding-bottom: 40px;
   }
@@ -25,6 +26,36 @@
     height: 360px;
     padding-right: 20px;
     overflow-y: scroll;
+
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--color-primary);
+    overflow-y: scroll;
+
+    * {
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 16px;
+      list-style: disc;
+    }
+
+    ol {
+      padding-left: 16px;
+      list-style: decimal;
+    }
 
     &::-webkit-scrollbar {
       width: 2px;
