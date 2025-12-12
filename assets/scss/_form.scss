@@ -8,6 +8,26 @@
     padding-right: 20px;
     padding-bottom: 40px;
   }
+
+  &.sale {
+    padding-bottom: 80px;
+
+    @media (max-width: 991px) {
+      padding-bottom: 40px;
+    }
+
+    .image-sale {
+      height: 100%;
+      padding-left: 40px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
   &.no-artwork {
     padding-bottom: 48px;
     &::before {
@@ -152,12 +172,12 @@
       color: #fff;
     }
 
-    .dropdown-custom-text{
+    .dropdown-custom-text {
       overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-            line-clamp: 1; 
-    -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
     }
   }
   .dropdown-custom-btn {
