@@ -8,7 +8,18 @@
       }
       .nav-tabs {
         flex-wrap: nowrap;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
         li {
+          &:first-child {
+            padding-left: 100px;
+          }
+          &:last-child {
+            padding-right: 40px;
+          }
           button {
             white-space: nowrap;
           }

@@ -112,7 +112,9 @@
       position: relative;
       width: 100%;
       aspect-ratio: 785 / 525;
-
+      @media (max-width: 991px) {
+        display: block;
+      }
       .ic-control {
         z-index: 4;
         position: absolute;

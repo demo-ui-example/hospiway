@@ -72,4 +72,20 @@
       margin-bottom: 40px;
     }
   }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 991px) {
+    .banner-slider {
+      height: 100%;
+      & > * {
+        height: 100%;
+      }
+      .swiper-banner-img {
+        height: 100%;
+      }
+    }
+  }
 }

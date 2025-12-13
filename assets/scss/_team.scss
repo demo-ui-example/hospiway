@@ -17,6 +17,9 @@
   }
   &-wrapper {
     height: 620px;
+    @media (max-width: 991px) {
+      height: auto;
+    }
   }
   &-title {
     margin-bottom: 24px;
