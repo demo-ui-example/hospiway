@@ -2061,6 +2061,7 @@ button.aloading::after {
 @media (max-width: 991px) {
   .form-register .form-register-wrapper {
     padding: 20px;
+    height: auto;
   }
 }
 .form-register .form-register-wrapper form {

@@ -910,7 +910,7 @@ const init = () => {
   downloadPDFCertificate();
   // playVideoIntro();
   swiperBanner();
-  hideDevTools();
+  // hideDevTools();
   // dropdownCommunity();
 };
 preloadImages("img").then(() => {
