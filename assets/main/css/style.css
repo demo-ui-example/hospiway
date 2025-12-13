@@ -1044,6 +1044,7 @@ button.aloading::after {
   background-size: 100% auto;
   pointer-events: none;
   opacity: 0.8;
+  background-repeat: repeat-x;
 }
 @media (max-width: 991px) {
   .profile::before {
