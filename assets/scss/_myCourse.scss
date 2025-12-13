@@ -88,6 +88,11 @@
             margin-bottom: 0;
             padding-top: 0;
             border-top: unset;
+            align-items: center;
+
+            .price {
+              margin-left: auto;
+            }
           }
 
           .course-progress {

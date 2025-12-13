@@ -107,6 +107,11 @@
       border-bottom: 1px solid rgba(17, 36, 72, 0.1);
       margin: 16px 0;
       gap: 8px;
+      align-items: center;
+
+      .price {
+        margin-left: auto;
+      }
     }
     .course-top {
       .name {

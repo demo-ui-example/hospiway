@@ -512,13 +512,27 @@ function updateCompleteLesson() {
       "course-id"
     );
 
+    let done = $(".lesson-item.done").length;
+    if (!parent.hasClass("done")) {
+      done++;
+    }
+
+    let total = $(".lesson-item").length;
+
+    let courseProgress = Math.round((done / total) * 100);
+
+    const nextLessonID = btn.data("next-lesson");
+
     $.ajax({
       url: ajaxUrl,
       type: "POST",
       data: {
-        action: "mark_lesson_complete",
+        action: "update_lesson_status",
+        status: "completed",
         lesson_id: lessonID,
-        course_id: courseID
+        course_id: courseID,
+        course_progress: courseProgress,
+        next_lesson_id: nextLessonID
       },
       beforeSend: function () {
         btn.addClass("aloading");
@@ -537,6 +551,12 @@ function updateCompleteLesson() {
 
         if (res.data.course_completed) {
           $(".course-detail .announcement").removeClass("d-none");
+        }
+
+        if (res.data.redirect_next_lesson) {
+          console.log(res.data.redirect_next_lesson);
+
+          window.location.href = res.data.redirect_next_lesson;
         }
       }
     });
@@ -567,21 +587,20 @@ function lessonCompleteHandler() {
   const lessonType = box.dataset.lessonType;
   const lessonDuration = parseInt(box.dataset.lessonDuration || 0);
 
-  if (lessonType === "video") {
-    handleVideoLesson(lessonId);
-  } else if (lessonType === "document") {
-    handleDocumentLesson(lessonId, lessonDuration);
-  }
+  const lessonStatus = box.dataset.lessonStatus;
+  if (lessonStatus == "completed") return;
+
+  handleDocumentLesson(lessonId, lessonDuration);
 }
 
-function handleVideoLesson(lessonId) {
-  const video = document.querySelector("#lesson-video");
-  if (!video) return;
+// function handleVideoLesson(lessonId) {
+//   const video = document.querySelector("#lesson-video");
+//   if (!video) return;
 
-  video.addEventListener("ended", function () {
-    appendCompleteButton(lessonId);
-  });
-}
+//   video.addEventListener("ended", function () {
+//     appendCompleteButton(lessonId);
+//   });
+// }
 
 // function handleDocumentLesson(lessonId, duration) {
 //   if (!duration || duration < 1) duration = 2;
@@ -599,7 +618,6 @@ function handleDocumentLesson(lessonId, duration) {
   let seconds = duration * 60;
   console.log("Document duration:", seconds, "seconds");
 
-  // Đếm ngược
   const countdownInterval = setInterval(() => {
     seconds--;
     console.log("Document countdown:", seconds, "s");
@@ -610,12 +628,19 @@ function handleDocumentLesson(lessonId, duration) {
   }, 1000);
 
   setTimeout(() => {
-    appendCompleteButton(lessonId);
+    $(
+      `.lesson-item[data-lesson-id='${lessonId}'] .complete-lesson`
+    ).removeClass("disabled");
     console.log("Document: time completed → show button");
   }, duration * 60 * 1000);
 }
 
 function appendCompleteButton(lessonId) {
+  let done = $(".lesson-item.done").length;
+  let total = $(".lesson-item").length;
+
+  let courseProgress = Math.round((done / total) * 100);
+
   $.ajax({
     url: ajaxUrl,
     type: "POST",
@@ -623,7 +648,8 @@ function appendCompleteButton(lessonId) {
     data: {
       action: "update_lesson_status",
       lesson_id: lessonId,
-      status: "completed"
+      status: "completed",
+      course_progress: courseProgress
     },
     success: function (res) {
       console.log("Status updated to studied:", res);

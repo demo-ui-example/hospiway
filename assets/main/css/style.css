@@ -487,6 +487,17 @@ button.aloading::after {
   justify-content: center;
   gap: 0;
 }
+#modalCourseCertificate .certificate-issued {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 70%;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
 #modalCourseCertificate .btn-download-pdf {
   display: flex;
   align-items: center;
@@ -981,6 +992,7 @@ button.aloading::after {
 .profile {
   padding: 40px 40px 80px;
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 991px) {
   .profile {
@@ -1004,15 +1016,17 @@ button.aloading::after {
 }
 .profile::before {
   content: "";
-  bottom: -30px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   position: absolute;
   width: 100%;
-  height: 295px;
+  height: 330px;
   z-index: 3;
   background-image: url("../../images/icon/artwork.svg");
-  background-size: 100% 100%;
+  background-size: 100% auto;
   pointer-events: none;
+  opacity: 0.8;
 }
 @media (max-width: 991px) {
   .profile::before {
@@ -1355,6 +1369,10 @@ button.aloading::after {
   border-bottom: 1px solid rgba(17, 36, 72, 0.1);
   margin: 16px 0;
   gap: 8px;
+  align-items: center;
+}
+.course-content .course-teacher .price {
+  margin-left: auto;
 }
 .course-content .course-top .name {
   margin-bottom: 8px;
@@ -1432,7 +1450,9 @@ button.aloading::after {
   overflow: hidden;
 }
 .training-item {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.045);
+  display: block;
+  height: 100%;
 }
 .training-item:hover .training-image img {
   transform: scale(1.05);
@@ -1454,6 +1474,13 @@ button.aloading::after {
 .training-content {
   padding: 24px;
 }
+.training-content .desc {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
 .training-top .name {
   margin-bottom: 8px;
   transition: all 0.3s;
@@ -1465,6 +1492,9 @@ button.aloading::after {
   .training-list {
     padding-bottom: 64px;
   }
+}
+.training-list .swiper-slide {
+  height: auto;
 }
 .training .swiper-button-prev {
   left: -20px;
@@ -1918,6 +1948,10 @@ button.aloading::after {
     padding-bottom: 40px;
   }
 }
+.form-register .container-fluid {
+  position: relative;
+  z-index: 4;
+}
 .form-register.sale {
   padding-bottom: 80px;
 }
@@ -1962,7 +1996,7 @@ button.aloading::after {
 }
 .form-register::before {
   content: "";
-  bottom: 0px;
+  bottom: 50px;
   left: 0;
   position: absolute;
   width: 100%;
@@ -1994,6 +2028,7 @@ button.aloading::after {
   background-color: #fff;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
   padding: 40px;
+  height: 100%;
 }
 @media (max-width: 991px) {
   .form-register .form-register-wrapper {
@@ -2006,6 +2041,7 @@ button.aloading::after {
   gap: 24px;
   position: relative;
   z-index: 4;
+  height: 100%;
 }
 @media (max-width: 991px) {
   .form-register .form-register-wrapper form {
@@ -2494,7 +2530,8 @@ button.aloading::after {
   padding: 24px;
 }
 .instruct-item {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.045);
+  display: block;
 }
 
 .feeback-sec {
@@ -2618,7 +2655,7 @@ button.aloading::after {
   transition: all 0.3s ease;
 }
 .feeback-sec .teach-item {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.045);
   padding: 40px 40px 24px;
   border-bottom: 2px solid var(--color-primary);
 }
@@ -2632,9 +2669,15 @@ button.aloading::after {
 }
 .feeback-sec .teach-item .info-wrap .avatar {
   width: 40px;
+  min-width: 40px;
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
+}
+.feeback-sec .teach-item .info-wrap .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .section-news {
@@ -2901,6 +2944,10 @@ button.aloading::after {
   margin-bottom: 0;
   padding-top: 0;
   border-top: unset;
+  align-items: center;
+}
+.my-course-wrapper .col-right .course-list .course-item .course-teacher .price {
+  margin-left: auto;
 }
 .my-course-wrapper .col-right .course-list .course-item .course-progress {
   padding: 16px 0;
