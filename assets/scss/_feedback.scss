@@ -2,21 +2,28 @@
   padding: 80px 0;
   background-color: #f8f8f8;
   .title {
-    margin-bottom: 48px;
+    // margin-bottom: 48px;
   }
   @media (max-width: 991px) {
     padding: 40px 0;
   }
   .feedback-wrap {
-    display: grid;
-    grid-template-columns: 4fr 6fr;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     gap: 24px;
+    max-width: 50%;
+    margin-inline: auto;
     margin-bottom: 80px;
     @media (max-width: 991px) {
       grid-template-columns: 1fr;
       gap: 16px;
       margin-bottom: 40px;
       padding: 0 20px;
+      max-width: 100%;
+    }
+    .description {
+      text-align: center;
     }
   }
   .swiper {

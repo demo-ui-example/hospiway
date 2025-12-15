@@ -1790,18 +1790,24 @@ button.aloading::after {
   content: unset;
 }
 .info.not-home .info-why {
-  display: grid;
-  grid-template-columns: 4fr 6fr;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   gap: 24px;
   margin-bottom: 100px;
+  max-width: 50%;
+  margin-inline: auto;
 }
 @media (max-width: 991px) {
   .info.not-home .info-why {
-    grid-template-columns: 1fr;
     padding: 0 20px;
     margin-bottom: 40px;
     gap: 16px;
+    max-width: 100%;
   }
+}
+.info.not-home .info-why .info-desc {
+  text-align: center;
 }
 .info::before {
   content: "";
@@ -2567,18 +2573,18 @@ button.aloading::after {
   padding: 80px 0;
   background-color: #f8f8f8;
 }
-.feeback-sec .title {
-  margin-bottom: 48px;
-}
 @media (max-width: 991px) {
   .feeback-sec {
     padding: 40px 0;
   }
 }
 .feeback-sec .feedback-wrap {
-  display: grid;
-  grid-template-columns: 4fr 6fr;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   gap: 24px;
+  max-width: 50%;
+  margin-inline: auto;
   margin-bottom: 80px;
 }
 @media (max-width: 991px) {
@@ -2587,7 +2593,11 @@ button.aloading::after {
     gap: 16px;
     margin-bottom: 40px;
     padding: 0 20px;
+    max-width: 100%;
   }
+}
+.feeback-sec .feedback-wrap .description {
+  text-align: center;
 }
 .feeback-sec .swiper {
   padding: 10px;
