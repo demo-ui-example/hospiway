@@ -2593,6 +2593,9 @@ button.aloading::after {
   padding: 10px;
   overflow: hidden;
 }
+.feeback-sec .swiper .swiper-slide {
+  height: auto;
+}
 .feeback-sec .feedback-teach {
   position: relative;
   margin-left: -10px;
@@ -2687,6 +2690,10 @@ button.aloading::after {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.045);
   padding: 40px 40px 24px;
   border-bottom: 2px solid var(--color-primary);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .feeback-sec .teach-item .info-wrap {
   display: flex;
@@ -2837,14 +2844,12 @@ button.aloading::after {
 
 .news-detail-wrapper {
   padding: 80px 0;
+  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 @media (max-width: 991px) {
   .news-detail-wrapper {
     padding: 40px 20px;
   }
-}
-.news-detail-wrapper {
-  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 .news-detail-wrapper .date {
   margin-top: 8px;
@@ -3375,6 +3380,7 @@ button.aloading::after {
 .course-detail .col-right .lesson-list .lesson-item {
   padding: 12px 0;
   border-bottom: 1px solid rgba(17, 36, 72, 0.2);
+  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item a {
   pointer-events: none;
@@ -3391,9 +3397,6 @@ button.aloading::after {
 .course-detail .col-right .lesson-list .lesson-item:last-child {
   border-bottom: unset;
   padding-bottom: 0;
-}
-.course-detail .col-right .lesson-list .lesson-item {
-  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item::before {
   content: "";

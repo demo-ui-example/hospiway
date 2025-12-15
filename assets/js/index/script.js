@@ -17,14 +17,14 @@ function swiperCourse() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".course-list .swiper-button-next",
-      prevEl: ".course-list .swiper-button-prev"
+      prevEl: ".course-list .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function swiperIntruct() {
@@ -34,14 +34,14 @@ function swiperIntruct() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".instruct-list .swiper-button-next",
-      prevEl: ".instruct-list .swiper-button-prev"
+      prevEl: ".instruct-list .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 4,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function swiperTraining() {
@@ -51,14 +51,14 @@ function swiperTraining() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".training-list .swiper-button-next",
-      prevEl: ".training-list .swiper-button-prev"
+      prevEl: ".training-list .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 4,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function swiperTeam() {
@@ -75,9 +75,9 @@ function swiperTeam() {
     allowTouchMove: true,
     breakpoints: {
       991: {
-        allowTouchMove: false
-      }
-    }
+        allowTouchMove: false,
+      },
+    },
   });
 
   var swiperTeamContent = new Swiper(".swiper-content-team", {
@@ -86,20 +86,20 @@ function swiperTeam() {
     effect: "fade",
     allowTouchMove: true,
     controller: {
-      control: swiperTeamImage
+      control: swiperTeamImage,
     },
     breakpoints: {
       991: {
-        allowTouchMove: false
-      }
+        allowTouchMove: false,
+      },
     },
     navigation: {
       nextEl: ".team-left .swiper-button-next",
-      prevEl: ".team-left .swiper-button-prev"
+      prevEl: ".team-left .swiper-button-prev",
     },
     pagination: {
       el: ".team-left .swiper-pagination",
-      type: "fraction"
+      type: "fraction",
     },
     on: {
       slideChangeTransitionStart: function () {
@@ -135,8 +135,8 @@ function swiperTeam() {
           el.style.animationDelay = `${index * 0.08}s`;
           el.classList.add("fade-in-up");
         });
-      }
-    }
+      },
+    },
   });
 
   swiperTeamImage.controller.control = swiperTeamContent;
@@ -170,7 +170,7 @@ function marquee() {
     gsap.set(content, {
       x: 0,
       willChange: "transform",
-      force3D: true
+      force3D: true,
     });
 
     const tl = gsap.timeline({ repeat: -1 });
@@ -179,8 +179,8 @@ function marquee() {
       duration: fullWidth / speed,
       ease: "none",
       modifiers: {
-        x: (x) => `${parseFloat(x) % fullWidth}px`
-      }
+        x: (x) => `${parseFloat(x) % fullWidth}px`,
+      },
     });
 
     // Hover pause
@@ -281,14 +281,14 @@ function swiperPageFeedback() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-teach .swiper-button-next",
-      prevEl: ".feedback-teach .swiper-button-prev"
+      prevEl: ".feedback-teach .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
   if (!document.querySelector(".swiper-video")) return;
   var swiper = new Swiper(".swiper-video", {
@@ -296,14 +296,14 @@ function swiperPageFeedback() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".feedback-video .swiper-button-next",
-      prevEl: ".feedback-video .swiper-button-prev"
+      prevEl: ".feedback-video .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
 }
 function headerMobile() {
@@ -328,19 +328,19 @@ function effectFade() {
           "will-change": "opacity, transform",
           opacity: 0,
           y: 20,
-          x: xValue
+          x: xValue,
         },
         {
           scrollTrigger: {
             trigger: element,
             start: "top 80%",
-            end: "bottom 80%"
+            end: "bottom 80%",
           },
           opacity: 1,
           y: 0,
           x: 0,
           duration: 0.5,
-          ease: "sine.out"
+          ease: "sine.out",
         }
       );
     });
@@ -358,7 +358,7 @@ function registerForm() {
       name: form.find("input[name='name']"),
       phone: form.find("input[name='phonenumber']"),
       email: form.find("input[name='email']"),
-      course: form.find(".dropdown-custom-text")
+      course: form.find(".dropdown-custom-text"),
     };
 
     const message = form.find("textarea");
@@ -391,7 +391,7 @@ function registerForm() {
         phone: fields.phone.val().trim(),
         email: fields.email.val().trim(),
         course: fields.course.text().trim(),
-        message: message.val().trim()
+        message: message.val().trim(),
       },
       beforeSend: function () {
         form.find("button[type='submit']").addClass("aloading");
@@ -404,7 +404,7 @@ function registerForm() {
       },
       error: function (xhr, status, error) {
         console.error("Lỗi khi gửi form:", error);
-      }
+      },
     });
   });
 }
@@ -426,7 +426,7 @@ function sectionIntructionModal() {
       selector: ".glightbox",
       loop: true,
       touchNavigation: true,
-      autoplayVideos: true
+      autoplayVideos: true,
     });
   }
 }
@@ -469,13 +469,13 @@ function sectionIntro() {
   gsap.from(".introduction .col-left li", {
     scrollTrigger: {
       trigger: ".introduction .col-left",
-      start: "top 80%"
+      start: "top 80%",
     },
     opacity: 0,
     x: -40,
     duration: 0.5,
     stagger: 0.2,
-    ease: "power2.out"
+    ease: "power2.out",
   });
 }
 
@@ -489,13 +489,13 @@ function initFadeInSections() {
     gsap.from(items, {
       scrollTrigger: {
         trigger: section,
-        start: "top 80%"
+        start: "top 80%",
       },
       opacity: 0,
       y: 30,
       duration: 0.4,
       stagger: 0.2,
-      ease: "power2.out"
+      ease: "power2.out",
     });
   });
 }
@@ -532,7 +532,7 @@ function updateCompleteLesson() {
         lesson_id: lessonID,
         course_id: courseID,
         course_progress: courseProgress,
-        next_lesson_id: nextLessonID
+        next_lesson_id: nextLessonID,
       },
       beforeSend: function () {
         btn.addClass("aloading");
@@ -558,7 +558,7 @@ function updateCompleteLesson() {
 
           window.location.href = res.data.redirect_next_lesson;
         }
-      }
+      },
     });
   });
 }
@@ -649,7 +649,7 @@ function appendCompleteButton(lessonId) {
       action: "update_lesson_status",
       lesson_id: lessonId,
       status: "completed",
-      course_progress: courseProgress
+      course_progress: courseProgress,
     },
     success: function (res) {
       console.log("Status updated to studied:", res);
@@ -661,7 +661,7 @@ function appendCompleteButton(lessonId) {
       if (res.data.course_complete) {
         $(".course-detail .announcement").removeClass("d-none");
       }
-    }
+    },
   });
 }
 
@@ -679,7 +679,7 @@ function openModalCompleteCourse() {
       dataType: "json",
       data: {
         action: "check_course_completed",
-        course_id: courseID
+        course_id: courseID,
       },
       success: function (res) {
         if (res.success && res.data.completed) {
@@ -687,7 +687,7 @@ function openModalCompleteCourse() {
         } else {
           console.log("Course not completed yet");
         }
-      }
+      },
     });
   });
 }
@@ -718,7 +718,7 @@ function submitCertificateForm() {
       {
         action: "get_certificate_info",
         course_id: courseId,
-        user_id: userId
+        user_id: userId,
       },
       function (res) {
         const finalUserName = fullName || res.user_name;
@@ -746,14 +746,14 @@ function downloadPDFCertificate() {
 
     html2canvas(area, {
       scale: 2,
-      useCORS: true
+      useCORS: true,
     })
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
 
         const pdf = new jspdf.jsPDF("landscape", "px", [
           canvas.width,
-          canvas.height
+          canvas.height,
         ]);
         pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
 
@@ -776,8 +776,8 @@ function swiperBanner() {
     effect: "fade",
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false
-    }
+      disableOnInteraction: false,
+    },
   });
 }
 
@@ -880,7 +880,7 @@ function dropdownCommunity() {
         const texts = {
           1: "Lớp online miễn phí",
           2: "Sinh hoạt",
-          3: "Thiện nguyện"
+          3: "Thiện nguyện",
         };
         valueSelect.textContent = texts[tabNumber];
       });
@@ -910,7 +910,7 @@ const init = () => {
   downloadPDFCertificate();
   // playVideoIntro();
   swiperBanner();
-  hideDevTools();
+  // hideDevTools();
   // dropdownCommunity();
 };
 preloadImages("img").then(() => {
