@@ -275,6 +275,7 @@
       }
       a {
         transition: color 0.3s ease;
+
         &:hover {
           color: var(--color-secondary);
         }
@@ -285,6 +286,15 @@
         gap: 24px;
         li {
           a {
+            display: block;
+            width: 18px;
+            height: auto;
+
+            svg {
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+            }
             &:hover {
               svg {
                 path {

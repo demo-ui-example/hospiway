@@ -2257,6 +2257,16 @@ button.aloading::after {
   align-items: center;
   gap: 24px;
 }
+.contact-wrap-right .contact-info-item ul li a {
+  display: block;
+  width: 18px;
+  height: auto;
+}
+.contact-wrap-right .contact-info-item ul li a svg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 .contact-wrap-right .contact-info-item ul li a:hover svg path {
   fill: var(--color-secondary);
 }
@@ -2854,12 +2864,14 @@ button.aloading::after {
 
 .news-detail-wrapper {
   padding: 80px 0;
-  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 @media (max-width: 991px) {
   .news-detail-wrapper {
     padding: 40px 20px;
   }
+}
+.news-detail-wrapper {
+  border-bottom: 1px solid rgba(17, 36, 72, 0.1);
 }
 .news-detail-wrapper .date {
   margin-top: 8px;
@@ -3390,7 +3402,6 @@ button.aloading::after {
 .course-detail .col-right .lesson-list .lesson-item {
   padding: 12px 0;
   border-bottom: 1px solid rgba(17, 36, 72, 0.2);
-  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item a {
   pointer-events: none;
@@ -3407,6 +3418,9 @@ button.aloading::after {
 .course-detail .col-right .lesson-list .lesson-item:last-child {
   border-bottom: unset;
   padding-bottom: 0;
+}
+.course-detail .col-right .lesson-list .lesson-item {
+  position: relative;
 }
 .course-detail .col-right .lesson-list .lesson-item::before {
   content: "";
