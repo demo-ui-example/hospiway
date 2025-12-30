@@ -1795,7 +1795,7 @@ button.aloading::after {
   flex-direction: column;
   gap: 24px;
   margin-bottom: 100px;
-  max-width: 50%;
+  max-width: 65%;
   margin-inline: auto;
 }
 @media (max-width: 991px) {
@@ -2593,7 +2593,7 @@ button.aloading::after {
   align-items: center;
   flex-direction: column;
   gap: 24px;
-  max-width: 50%;
+  max-width: 65%;
   margin-inline: auto;
   margin-bottom: 80px;
 }
